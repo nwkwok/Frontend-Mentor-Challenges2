@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+$primary: hsl(180, 29%, 50%);
+$background: hsl(180, 52%, 92%);
+$tablets: hsl(180, 10%, 95%);
+$darkGrayCyan: hsl(180, 8%, 52%);
+$veryDarkGrayCyan: hsl(180, 14%, 20%);
+
+html,
+body {
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: $background;
+}
+
+header {
+    background-image: url('../../images/bg-header-mobile.svg');
+    background-color: $primary;
+    background-position: cover;
+    background-repeat: no-repeat;
+    height: 20%;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    background-color: $background;
+
+}
+
+.filter-box {
+    position: absolute;
+    background-color: $tablets;
+    height: 100px;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%);
+    top: 16%;
+    border-radius: 5px;
+    padding: 5px;
+
+    &-content {
+        height: 100%;
+        padding: 0 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-selection {
+            display: flex;
+        }
+        
+        &-selection #selectedFilter{
+            padding: 7px;
+            background-color: $background;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+    
+            font-size: 10px;
+            font-weight: 700;
+            color: $primary;
+            padding: 5px;
+        }    
+
+        &-selection #remove {
+            background-color: $primary;
+            padding: 5px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            transition: .5;
+
+            &:hover{
+                background-color: black;
+            }
+        }
+
+        &-clear #clear {
+            color: $primary;
+            font-size: 10px;
+            margin-right: 10px;
+            padding: 5px;
+
+            
+            &:hover {
+                text-decoration: underline;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+
+
+    }
+
+
+
+}
+
+.job-card {
+    
+    &-container {
+        background-color: $tablets;
+        width: 80%;
+        position: absolute;
+        left: 50%;
+        top: 25%;
+        transform: translate(-50%);
+        border-radius: 3px;
+        height: 90px;
+        padding: 5px;
+        box-shadow: 0px 5px 10px rgba(91, 164, 164, .5);
+        transition: .1s ease-in-out;
+
+        &:hover, &:active {
+            border-left: 4px $primary solid;
+            box-shadow: 0px 7px 12px rgba(91, 164, 164, .7);
+            left: 50.25%;
+            top: 25.25%;
+        }
+    }
+
+    &-info {
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    &-logo {
+        padding-left: 20px;
+        img {
+            width: 80%;
+
+        }
+    }
+
+    &-company {
+        padding-left: 20px;
+
+        #company {
+            font-weight: 700;
+            font-size: 10px;
+            color: $primary;
+            margin-right: 10px;
+        }
+
+        #new {
+            background-color: $primary;
+            color: $tablets;
+            font-size: 8px;
+            padding: 5px;
+            border-radius:10px;
+        }
+
+        #featured {
+
+            background-color: $veryDarkGrayCyan;
+            color: $tablets;
+            font-size: 8px;
+            padding: 5px;
+            border-radius:10px;
+        }
+
+        #jobTitle {
+            color: $primary;
+            font-weight: 700;
+            margin-top:10px;
+            margin-bottom: 7px;
+        }
+    }
+
+    &-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11px;
+        color: $darkGrayCyan;
+
+        .divider {
+            background-color: $darkGrayCyan;
+            height: 3px;
+            width: 3px;
+            border-radius: 50%;
+            opacity: .5;
+        }
+
+    }
+
+    &-filters {
+        margin-left: auto;
+        font-size: 10px;
+        font-weight: 700;
+        color: $primary;
+        padding: 5px;
+
+        span {
+            margin-right: 10px;
+            padding: 7px;
+            background-color: $background;
+            border-radius: 3px;
+            cursor: pointer;
+            
+            &:hover{
+                color: white;
+                background-color: $primary;
+            }
+        }
+
+    }
+
+}
+
+.hidden {
+    display: none;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    padding-top: 8px;
+}
+
+@media (min-width: 376px) {
+
+    header {
+        background-image: url('../../images/bg-header-desktop.svg');
+    }
+
+    .filter-box {
+        height: 32px;
+        top: 18%
+    }
+}
