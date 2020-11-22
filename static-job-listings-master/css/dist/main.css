@@ -74,15 +74,19 @@ body {
   cursor: pointer;
 }
 
+.job-card {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
 .job-card-container {
   background-color: #f1f4f4;
   width: 80%;
-  position: absolute;
+  position: relative;
   left: 50%;
-  top: 25%;
   transform: translate(-50%);
   border-radius: 3px;
   height: 90px;
+  margin-bottom: 30px;
   padding: 5px;
   box-shadow: 0px 5px 10px rgba(91, 164, 164, 0.5);
   transition: 0.1s ease-in-out;
