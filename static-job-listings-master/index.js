@@ -1,8 +1,8 @@
-const jobCardArea = document.getElementById('jobCard')
-const languages = document.querySelectorAll('languages')
+const jobCardArea = document.getElementById("jobCard");
+const languages = document.querySelectorAll("languages");
 
 data.forEach((data) => {
-    jobCardArea.innerHTML += `
+  jobCardArea.innerHTML += `
     <div class="job-card-container">
     <div class="job-card-info">
       <div class="job-card-logo">
@@ -26,17 +26,14 @@ data.forEach((data) => {
       <div class="job-card-filters">
         <span id="role">${data.role}</span>
         <span id="level">${data.level}</span>
-        <span class="languages" id="languages">${data.languages[0]}</span>
-        <span class="languages" id="languages">${data.languages[1]}</span>
-        <span class="languages" id="languages">${data.languages[2]}</span>
+        ${data.languages.map((language) => {
+          return `<span class="languages" id="languages">${language}</span>`;
+        })}
       </div>
     </div>
   </div>
-  `
-  if (languages.textContent === 'undefined') {
-    languages.innerHTML === '<div></div>'
-}
-
-    
+  `;
+  if (languages.textContent === "undefined") {
+    languages.innerHTML === "<div></div>";
+  }
 });
-
