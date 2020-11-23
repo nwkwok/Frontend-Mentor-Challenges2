@@ -42,6 +42,10 @@ body {
     padding: 5px;
     min-width: 340px;
 
+    &.hidden {
+        display: hidden;
+    }
+
     &-content {
         height: 100%;
         padding: 0 5px;

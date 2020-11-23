@@ -33,6 +33,9 @@ body {
   padding: 5px;
   min-width: 340px;
 }
+.filter-box.hidden {
+  display: hidden;
+}
 .filter-box-content {
   height: 100%;
   padding: 0 5px;

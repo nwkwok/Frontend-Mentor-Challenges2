@@ -5,7 +5,9 @@ var jobFilters = document.getElementsByClassName('job-card-filters');
 var selectedFilters = document.getElementById('selectedFilters');
 var clearAllFilters = document.getElementById('clear');
 var deleteFilter = document.getElementsByClassName('remove');
-var previousSibling = deleteFilter.previousElementSibling; // For hiding elements based on filters
+var previousSibling = deleteFilter.previousElementSibling; // For toggling filter box
+
+var filterBox = document.getElementById('filter-box'); // For hiding elements based on filters
 
 var jobCard = document.getElementsByClassName('job-card-container');
 var roles = document.getElementsByClassName('role');
@@ -27,7 +29,9 @@ for (var i = 0; i < jobFilters.length; i++) {
     var filter = e.target.innerText;
     filterArr.push(filter);
     selectedFilters.innerHTML += "\n        <span>".concat(e.target.innerText, "</span>\n        <img id=\"remove\" class=\"remove\" src=\"images/icon-remove.svg\"></img>");
-    console.log(filterArr); // After we add the item to filterArr, we want to see what jobCards hold the value of filterArr. If they do not hold that value, we want to hide the car. 
+    console.log(filterArr); //Toggle filter box
+
+    filterArr.length !== 0 && filterBox.classList.remove('hidden'); // After we add the item to filterArr, we want to see what jobCards hold the value of filterArr. If they do not hold that value, we want to hide the car. 
     // Remove a selected filter item
 
     var _loop = function _loop(_i) {
@@ -56,6 +60,7 @@ for (var i = 0; i < jobFilters.length; i++) {
 clearAllFilters.addEventListener('click', function () {
   selectedFilters.innerHTML = '';
   filterArr = [];
+  filterArr.length == 0 && filterBox.classList.add('hidden');
 }); //////////// Attempted ideas /////////////
 //Render job cards based on selected filters
 // Array.from(roles).map(role => {

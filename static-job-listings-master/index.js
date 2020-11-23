@@ -5,6 +5,9 @@ const clearAllFilters = document.getElementById('clear');
 const deleteFilter = document.getElementsByClassName('remove');
 const previousSibling = deleteFilter.previousElementSibling
 
+// For toggling filter box
+const filterBox = document.getElementById('filter-box');
+
 // For hiding elements based on filters
 const jobCard = document.getElementsByClassName('job-card-container');
 const roles = document.getElementsByClassName('role')
@@ -62,7 +65,8 @@ for (let i = 0; i < jobFilters.length; i++) {
         <img id="remove" class="remove" src="images/icon-remove.svg"></img>` 
         console.log(filterArr);
 
-
+        //Toggle filter box
+        filterArr.length !== 0 && filterBox.classList.remove('hidden');
 
         // After we add the item to filterArr, we want to see what jobCards hold the value of filterArr. If they do not hold that value, we want to hide the car. 
 
@@ -83,12 +87,16 @@ for (let i = 0; i < jobFilters.length; i++) {
     })}
 
   
+
+    
     // Remove all filters and clear array
     clearAllFilters.addEventListener('click', () => {
         selectedFilters.innerHTML = ''
         filterArr = [];
+        filterArr.length == 0 && filterBox.classList.add('hidden');
     });
 
+    
 
 
 
