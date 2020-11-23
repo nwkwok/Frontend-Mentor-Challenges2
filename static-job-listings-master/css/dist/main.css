@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  background-image: url("../../images/bg-header-mobile.svg");
+  background-image: url("../../images/bg-header-desktop.svg");
   background-color: #5ba4a4;
   background-position: cover;
   background-repeat: no-repeat;
@@ -24,7 +24,7 @@ body {
 .filter-box {
   position: absolute;
   background-color: #f1f4f4;
-  height: 100px;
+  height: 50px;
   width: 80%;
   left: 50%;
   transform: translate(-50%);
@@ -102,6 +102,9 @@ body {
   left: 50.25%;
   top: 25.25%;
 }
+.job-card-container .hidden {
+  display: hidden;
+}
 .job-card-info {
   padding-top: 10px;
   display: flex;
@@ -137,10 +140,14 @@ body {
   border-radius: 10px;
 }
 .job-card-company #jobTitle {
-  color: #5ba4a4;
+  color: black;
   font-weight: 700;
   margin-top: 10px;
   margin-bottom: 7px;
+}
+.job-card-company #jobTitle:hover {
+  color: #5ba4a4;
+  cursor: pointer;
 }
 .job-card-details {
   display: flex;
@@ -196,13 +203,59 @@ body {
   padding-top: 8px;
 }
 
-@media (min-width: 376px) {
-  header {
-    background-image: url("../../images/bg-header-desktop.svg");
+@media (max-width: 852px) {
+  .filter-box {
+    height: 100px;
   }
 
-  .filter-box {
-    height: 32px;
-    top: 18%;
+  .job-card {
+    margin-top: 150px;
+  }
+
+  .job-card-container {
+    height: 170px;
+    margin-bottom: 55px;
+  }
+
+  .job-card-info {
+    background-color: #f1f4f4;
+    margin-top: 15px;
+    height: 80%;
+    flex-direction: column;
+    align-items: initial;
+    align-content: initial;
+  }
+
+  .job-card-logo img {
+    position: absolute;
+    width: 70px;
+    transform: translateY(-70px);
+  }
+
+  .job-card-details {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .job-card-details .divider {
+    margin: 3px 10px 20px;
+  }
+
+  .job-card-filters {
+    margin-left: 12px;
+    margin-top: 5px;
+    border-top: 1px solid #7b8e8e;
+    width: 80%;
+    line-height: 4;
+  }
+}
+@media (max-width: 503px) {
+  .job-card-container {
+    height: 200px;
+    margin-bottom: 55px;
+  }
+}
+@media (max-width: 375) {
+  header {
+    background-image: url("../../images/bg-header-mobile.svg");
   }
 }

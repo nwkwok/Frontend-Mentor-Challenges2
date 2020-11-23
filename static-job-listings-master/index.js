@@ -3,12 +3,11 @@ const languages = document.querySelectorAll('languages')
 const jobFilters = document.getElementsByClassName('job-card-filters');
 const selectedFilters = document.getElementById('selectedFilters');
 const clearAllFilters = document.getElementById('clear');
-
 const deleteFilter = document.getElementsByClassName('remove');
 const previousSibling = deleteFilter.previousElementSibling
+const jobCard = document.getElementsByClassName('job-card-container');
 
 let filterArr = [];
-
 
 data.forEach((data) => {
     jobCardArea.innerHTML += `
@@ -47,14 +46,18 @@ data.forEach((data) => {
 //Click on job filter and add it to the filters box
 for (let i = 0; i < jobFilters.length; i++) {
     jobFilters[i].addEventListener('click', (e) => {
-        e.stopPropagation();
         const filter = e.target.innerText;
         filterArr.push(filter);
-
         selectedFilters.innerHTML += `
         <span>${e.target.innerText}</span>
         <img id="remove" class="remove" src="images/icon-remove.svg"></img>` 
         console.log(filterArr);
+
+        //Render job cards based on selected filters
+        // Array.from(jobCard).forEach(item => {
+        //     if (filterArr.includes)
+        //     item.classList.toggle('hidden')
+        // });
 
         //Click on selected filter to delete
         for (let i = 0; i < deleteFilter.length; i++) {
@@ -67,29 +70,13 @@ for (let i = 0; i < jobFilters.length; i++) {
                 deleteFilter[i].previousElementSibling.innerText = '';
                 deleteFilter[i].parentNode.removeChild(deleteFilter[i]);
                 console.log(filterArr);
-
             })
         }
-
     })}
-
-
-
-
 
 clearAllFilters.addEventListener('click', () => {
     selectedFilters.innerHTML = ''
     filterArr = [];
 });
-
-
-
-    //     if (filterArr.includes(e.target.innerText) === false) {
-    //         const filter = e.target.innerText;
-    //         filterArr.push(filter);
-    //         [...new Set(filterArr)];
-    //         console.log(...filterArr);
-    //     }
-    // })}
 
 

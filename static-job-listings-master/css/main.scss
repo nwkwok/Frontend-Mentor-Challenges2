@@ -15,7 +15,8 @@ body {
 }
 
 header {
-    background-image: url('../../images/bg-header-mobile.svg');
+    background-image: url('../../images/bg-header-desktop.svg');
+
     background-color: $primary;
     background-position: cover;
     background-repeat: no-repeat;
@@ -32,7 +33,7 @@ body {
 .filter-box {
     position: absolute;
     background-color: $tablets;
-    height: 100px;
+    height: 50px;
     width: 80%;
     left: 50%;
     transform: translate(-50%);
@@ -104,7 +105,6 @@ body {
 }
 
 .job-card {
-
     margin-top: 50px;
     margin-bottom: 100px;
     
@@ -127,6 +127,9 @@ body {
             left: 50.25%;
             top: 25.25%;
         }
+        & .hidden {
+            display: hidden;
+        }
     }
 
     &-info {
@@ -137,6 +140,7 @@ body {
 
     &-logo {
         padding-left: 20px;
+
         img {
             width: 80%;
 
@@ -171,10 +175,15 @@ body {
         }
 
         #jobTitle {
-            color: $primary;
+            color: black;
             font-weight: 700;
             margin-top:10px;
             margin-bottom: 7px;
+
+            &:hover{
+                color:$primary;
+                cursor: pointer;
+            }
         }
     }
 
@@ -191,6 +200,7 @@ body {
             width: 3px;
             border-radius: 50%;
             opacity: .5;
+
         }
 
     }
@@ -240,14 +250,69 @@ body {
     padding-top: 8px;
 }
 
-@media (min-width: 376px) {
 
-    header {
-        background-image: url('../../images/bg-header-desktop.svg');
-    }
+@media (max-width: 852px) {
 
     .filter-box {
-        height: 32px;
-        top: 18%
+        height: 100px;
     }
+
+    .job-card {
+        margin-top: 150px;
+    }
+
+    .job-card-container {
+        height:170px;
+        margin-bottom: 55px;
+        }
+
+
+    .job-card-info {
+        background-color: $tablets;
+        margin-top: 15px;
+        height:80%;
+        flex-direction: column;
+        align-items: initial;
+        align-content: initial;
+    }
+
+    .job-card-logo img {
+        position: absolute;
+        width: 70px;
+        transform: translateY(-70px);
+        }
+
+    .job-card-details {
+        justify-content:flex-start;
+        align-items: flex-start;
+
+        .divider {
+            margin:3px 10px 20px;
+            
+        }
+    }
+
+    .job-card-filters { 
+        margin-left: 12px;
+        margin-top: 5px;
+        border-top: 1px solid $darkGrayCyan;
+        width: 80%;
+        line-height: 4;
+    }
+    
+}
+
+@media (max-width: 503px) {
+    .job-card-container {
+        height:200px;
+        margin-bottom: 55px;
+        }
+
+}
+
+@media (max-width: 375) {
+    header {
+        background-image: url('../../images/bg-header-mobile.svg');
+    }
+
 }
