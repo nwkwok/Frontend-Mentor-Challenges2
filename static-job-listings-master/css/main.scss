@@ -40,6 +40,7 @@ body {
     top: 16%;
     border-radius: 5px;
     padding: 5px;
+    min-width: 340px;
 
     &-content {
         height: 100%;
@@ -47,6 +48,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
 
         &-selection {
             display: flex;
@@ -101,12 +103,13 @@ body {
     }
 
 
-
+ 
 }
 
 .job-card {
     margin-top: 50px;
     margin-bottom: 100px;
+    min-width: 340px;
     
     &-container {
         background-color: $tablets;

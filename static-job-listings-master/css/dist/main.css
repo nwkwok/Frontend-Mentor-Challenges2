@@ -31,6 +31,7 @@ body {
   top: 16%;
   border-radius: 5px;
   padding: 5px;
+  min-width: 340px;
 }
 .filter-box-content {
   height: 100%;
@@ -82,6 +83,7 @@ body {
 .job-card {
   margin-top: 50px;
   margin-bottom: 100px;
+  min-width: 340px;
 }
 .job-card-container {
   background-color: #f1f4f4;

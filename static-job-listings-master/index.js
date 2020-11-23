@@ -1,13 +1,22 @@
 const jobCardArea = document.getElementById('jobCard')
-const languages = document.querySelectorAll('languages')
 const jobFilters = document.getElementsByClassName('job-card-filters');
 const selectedFilters = document.getElementById('selectedFilters');
 const clearAllFilters = document.getElementById('clear');
 const deleteFilter = document.getElementsByClassName('remove');
 const previousSibling = deleteFilter.previousElementSibling
-const jobCard = document.getElementsByClassName('job-card-container');
 
+// For hiding elements based on filters
+const jobCard = document.getElementsByClassName('job-card-container');
+const roles = document.getElementsByClassName('role')
+const level = document.getElementsByClassName('level')
+const languages = document.getElementsByClassName('languages')
+
+// Arrays
 let filterArr = [];
+let rolesArr = [];
+let levelArr = [];
+let languageArr = [];
+
 
 data.forEach((data) => {
     jobCardArea.innerHTML += `
@@ -32,8 +41,8 @@ data.forEach((data) => {
         </div>
       </div>
       <div class="job-card-filters">
-        <span id="role">${data.role}</span>
-        <span id="level">${data.level}</span>
+        <span class="role">${data.role}</span>
+        <span class="level">${data.level}</span>
         ${data.languages.map((language) => {
             return `<span class="languages">${language}</span>`
         }).join('')}
@@ -53,13 +62,12 @@ for (let i = 0; i < jobFilters.length; i++) {
         <img id="remove" class="remove" src="images/icon-remove.svg"></img>` 
         console.log(filterArr);
 
-        //Render job cards based on selected filters
-        // Array.from(jobCard).forEach(item => {
-        //     if (filterArr.includes)
-        //     item.classList.toggle('hidden')
-        // });
 
-        //Click on selected filter to delete
+
+        // After we add the item to filterArr, we want to see what jobCards hold the value of filterArr. If they do not hold that value, we want to hide the car. 
+
+
+      // Remove a selected filter item
         for (let i = 0; i < deleteFilter.length; i++) {
             deleteFilter[i].addEventListener('click', () => {
                 const item = (deleteFilter[i].previousElementSibling.innerText);
@@ -74,9 +82,41 @@ for (let i = 0; i < jobFilters.length; i++) {
         }
     })}
 
-clearAllFilters.addEventListener('click', () => {
-    selectedFilters.innerHTML = ''
-    filterArr = [];
-});
+  
+    // Remove all filters and clear array
+    clearAllFilters.addEventListener('click', () => {
+        selectedFilters.innerHTML = ''
+        filterArr = [];
+    });
 
+
+
+
+
+//////////// Attempted ideas /////////////
+
+        //Render job cards based on selected filters
+
+        // Array.from(roles).map(role => {
+        //   if (filterArr.includes(role.innerText) === false) {
+        //     console.log(this.jobCard.innerHTML);
+        //   }
+        // })
+
+        // Array.from(level).map(level => {
+        //   levelArr.push(level.innerText);
+        // })
+
+        // Array.from(languages).map(language => {
+        //   languageArr.push(language.innerText)
+        // })
+
+        // const combinedArr = [...rolesArr, ...levelArr, ...languageArr];
+        // console.log(combinedArr);
+
+
+        // Array.from(jobCard).forEach(item => {
+        //     if (filterArr.includes)
+        //     item.classList.toggle('hidden')
+        // });
 
