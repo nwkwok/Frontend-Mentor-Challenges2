@@ -10,16 +10,9 @@ const filterBox = document.getElementById('filter-box');
 
 // For hiding elements based on filters
 const jobCard = document.getElementsByClassName('job-card-container');
-const roles = document.getElementsByClassName('role')
-const level = document.getElementsByClassName('level')
-const languages = document.getElementsByClassName('languages')
-const children = document.getElementsByClassName('child');
 
 // Arrays
 let filterArr = [];
-let rolesArr = [];
-let levelArr = [];
-let languageArr = [];
 
 
 data.forEach((data) => {
@@ -57,8 +50,6 @@ data.forEach((data) => {
 });
 
 
-
-
 //Click on job filter and add it to the filters box
 for (let i = 0; i < jobFilters.length; i++) {
     jobFilters[i].addEventListener('click', (e) => {
@@ -67,19 +58,14 @@ for (let i = 0; i < jobFilters.length; i++) {
         selectedFilters.innerHTML += `
         <span>${e.target.innerText}</span>
         <img id="remove" class="remove" src="images/icon-remove.svg"></img>` 
-        // console.log(filterArr);
 
         //Toggle filter box
         filterArr.length !== 0 && filterBox.classList.remove('hidden');
-
-        // After we add the item to filterArr, we want to see what jobCards hold the value of filterArr. If they do not hold that value, we want to hide these card. 
 
         // Loop through each card and create an array with that card's filter values
         for (let i = 0; i < jobCard.length; i++) {
           let cardArr = [];
           cardArr.push(data[i].role, data[i].level, ...data[i].languages);
-          // console.log(filterArr);
-          console.log(cardArr);
 
           //Once you have the card value, check it to filterArr
           if (!cardArr.includes(...filterArr)) {
@@ -94,8 +80,7 @@ for (let i = 0; i < jobFilters.length; i++) {
                 if (filterArr.includes(item)) {
                     filterArr.splice(filterArr.indexOf(item));
                 }
-                console.log(filterArr)
-
+                
                 deleteFilter[i].previousElementSibling.innerText = '';
                 deleteFilter[i].parentNode.removeChild(deleteFilter[i]);
                 filterArr.length == 0 && filterBox.classList.add('hidden');
@@ -115,33 +100,4 @@ for (let i = 0; i < jobFilters.length; i++) {
         }
 
     });
-
-  
-
-//////////// Attempted ideas /////////////
-
-        //Render job cards based on selected filters
-
-        // Array.from(roles).map(role => {
-        //   if (filterArr.includes(role.innerText) === false) {
-        //     console.log(this.jobCard.innerHTML);
-        //   }
-        // })
-
-        // Array.from(level).map(level => {
-        //   levelArr.push(level.innerText);
-        // })
-
-        // Array.from(languages).map(language => {
-        //   languageArr.push(language.innerText)
-        // })
-
-        // const combinedArr = [...rolesArr, ...levelArr, ...languageArr];
-        // console.log(combinedArr);
-
-
-        // Array.from(jobCard).forEach(item => {
-        //     if (filterArr.includes)
-        //     item.classList.toggle('hidden')
-        // });
 
