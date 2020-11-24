@@ -56,6 +56,9 @@ data.forEach((data) => {
   `
 });
 
+
+
+
 //Click on job filter and add it to the filters box
 for (let i = 0; i < jobFilters.length; i++) {
     jobFilters[i].addEventListener('click', (e) => {
@@ -70,12 +73,19 @@ for (let i = 0; i < jobFilters.length; i++) {
         filterArr.length !== 0 && filterBox.classList.remove('hidden');
 
         // After we add the item to filterArr, we want to see what jobCards hold the value of filterArr. If they do not hold that value, we want to hide these card. 
-      
 
-        // This is where I'm stuck
+        // Loop through each card and create an array with that card's filter values
+        for (let i = 0; i < jobCard.length; i++) {
+          let cardArr = [];
+          cardArr.push(data[i].role, data[i].level, ...data[i].languages);
+          // console.log(filterArr);
+          console.log(cardArr);
 
-
-
+          //Once you have the card value, check it to filterArr
+          if (!cardArr.includes(...filterArr)) {
+            jobCard[i].classList.add('hidden');
+          }
+        }  
 
       // Remove a selected filter item
         for (let i = 0; i < deleteFilter.length; i++) {
@@ -84,6 +94,7 @@ for (let i = 0; i < jobFilters.length; i++) {
                 if (filterArr.includes(item)) {
                     filterArr.splice(filterArr.indexOf(item));
                 }
+                console.log(filterArr)
 
                 deleteFilter[i].previousElementSibling.innerText = '';
                 deleteFilter[i].parentNode.removeChild(deleteFilter[i]);
@@ -98,9 +109,14 @@ for (let i = 0; i < jobFilters.length; i++) {
         selectedFilters.innerHTML = ''
         filterArr = [];
         filterArr.length == 0 && filterBox.classList.add('hidden');
+
+        for (i = 0; i<jobCard.length; i++) {
+          filterArr.length == 0 && jobCard[i].classList.remove('hidden');
+        }
+
     });
 
-    
+  
 
 //////////// Attempted ideas /////////////
 

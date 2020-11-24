@@ -1,5 +1,13 @@
 "use strict";
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 var jobCardArea = document.getElementById('jobCard');
 var jobFilters = document.getElementsByClassName('job-card-filters');
 var selectedFilters = document.getElementById('selectedFilters');
@@ -25,35 +33,47 @@ data.forEach(function (data) {
   }).join(''), "\n      </div>\n    </div>\n  </div>\n  ");
 }); //Click on job filter and add it to the filters box
 
-for (var i = 0; i < jobFilters.length; i++) {
-  jobFilters[i].addEventListener('click', function (e) {
+for (var _i = 0; _i < jobFilters.length; _i++) {
+  jobFilters[_i].addEventListener('click', function (e) {
     var filter = e.target.innerText;
     filterArr.push(filter);
     selectedFilters.innerHTML += "\n        <span>".concat(e.target.innerText, "</span>\n        <img id=\"remove\" class=\"remove\" src=\"images/icon-remove.svg\"></img>"); // console.log(filterArr);
     //Toggle filter box
 
     filterArr.length !== 0 && filterBox.classList.remove('hidden'); // After we add the item to filterArr, we want to see what jobCards hold the value of filterArr. If they do not hold that value, we want to hide these card. 
-    // This is where I'm stuck
-    // Remove a selected filter item
+    // Loop through each card and create an array with that card's filter values
 
-    var _loop = function _loop(_i) {
-      deleteFilter[_i].addEventListener('click', function () {
-        var item = deleteFilter[_i].previousElementSibling.innerText;
+    for (var _i2 = 0; _i2 < jobCard.length; _i2++) {
+      var cardArr = [];
+      cardArr.push.apply(cardArr, [data[_i2].role, data[_i2].level].concat(_toConsumableArray(data[_i2].languages))); // console.log(filterArr);
+
+      console.log(cardArr); //Once you have the card value, check it to filterArr
+
+      if (!cardArr.includes.apply(cardArr, _toConsumableArray(filterArr))) {
+        jobCard[_i2].classList.add('hidden');
+      }
+    } // Remove a selected filter item
+
+
+    var _loop = function _loop(_i3) {
+      deleteFilter[_i3].addEventListener('click', function () {
+        var item = deleteFilter[_i3].previousElementSibling.innerText;
 
         if (filterArr.includes(item)) {
           filterArr.splice(filterArr.indexOf(item));
         }
 
-        deleteFilter[_i].previousElementSibling.innerText = '';
+        console.log(filterArr);
+        deleteFilter[_i3].previousElementSibling.innerText = '';
 
-        deleteFilter[_i].parentNode.removeChild(deleteFilter[_i]);
+        deleteFilter[_i3].parentNode.removeChild(deleteFilter[_i3]);
 
         filterArr.length == 0 && filterBox.classList.add('hidden');
       });
     };
 
-    for (var _i = 0; _i < deleteFilter.length; _i++) {
-      _loop(_i);
+    for (var _i3 = 0; _i3 < deleteFilter.length; _i3++) {
+      _loop(_i3);
     }
   });
 } // Remove all filters and clear array
@@ -63,6 +83,10 @@ clearAllFilters.addEventListener('click', function () {
   selectedFilters.innerHTML = '';
   filterArr = [];
   filterArr.length == 0 && filterBox.classList.add('hidden');
+
+  for (i = 0; i < jobCard.length; i++) {
+    filterArr.length == 0 && jobCard[i].classList.remove('hidden');
+  }
 }); //////////// Attempted ideas /////////////
 //Render job cards based on selected filters
 // Array.from(roles).map(role => {
