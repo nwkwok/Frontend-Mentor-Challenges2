@@ -143,7 +143,7 @@ body {
         padding-top: 10px;
         display: flex;
         align-items: center;
-    }
+    } 
 
     &-logo {
         padding-left: 20px;
@@ -156,15 +156,15 @@ body {
 
     &-company {
         padding-left: 20px;
-
-        #company {
+        padding-top: 10px;
+        .company {
             font-weight: 700;
             font-size: 10px;
             color: $primary;
             margin-right: 10px;
         }
 
-        #new {
+        .new {
             background-color: $primary;
             color: $tablets;
             font-size: 8px;
@@ -172,7 +172,7 @@ body {
             border-radius:10px;
         }
 
-        #featured {
+        .featured {
 
             background-color: $veryDarkGrayCyan;
             color: $tablets;
@@ -181,7 +181,7 @@ body {
             border-radius:10px;
         }
 
-        #jobTitle {
+        .jobTitle {
             color: black;
             font-weight: 700;
             margin-top:10px;

@@ -26,21 +26,21 @@ data.forEach((data) => {
     <div class="job-card-container">
     <div class="job-card-info">
       <div class="job-card-logo">
-        <img id="logo" alt="${data.company}-logo" src=${data.logo}>
+        <img alt="${data.company}-logo" src=${data.logo}>
       </div>
       <div class="job-card-company">
-        <span id="company">${data.company}</span>
-        ${data.new ? '<span id="new">New!</span>' : '<span></span>'}
-        ${data.featured ? '<span id="featured">FEATURED</span>' : '<span></span>'}
+        <span class='company'>${data.company}</span>
+        ${data.new ? '<span class="new">New!</span>' : '<span></span>'}
+        ${data.featured ? '<span class="featured">FEATURED</span>' : '<span></span>'}
         <div class="job-card-title">
-          <div id="jobTitle">${data.position}</div>
+          <div class="jobTitle">${data.position}</div>
         </div>
         <div class="job-card-details">
-          <span id="postedAt">${data.postedAt}</span>
+          <span class="postedAt">${data.postedAt}</span>
           <div class="divider"></div>
-          <span id="contact">${data.contract}</span>
+          <span class="contact">${data.contract}</span>
           <div class="divider"></div>
-          <span id="location">${data.location}</span>
+          <span class="location">${data.location}</span>
         </div>
       </div>
       <div class="job-card-filters">
