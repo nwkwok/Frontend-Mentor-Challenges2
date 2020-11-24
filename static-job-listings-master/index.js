@@ -13,6 +13,7 @@ const jobCard = document.getElementsByClassName('job-card-container');
 const roles = document.getElementsByClassName('role')
 const level = document.getElementsByClassName('level')
 const languages = document.getElementsByClassName('languages')
+const children = document.getElementsByClassName('child');
 
 // Arrays
 let filterArr = [];
@@ -44,10 +45,10 @@ data.forEach((data) => {
         </div>
       </div>
       <div class="job-card-filters">
-        <span class="role">${data.role}</span>
-        <span class="level">${data.level}</span>
+        <span class="child">${data.role}</span>
+        <span class="child">${data.level}</span>
         ${data.languages.map((language) => {
-            return `<span class="languages">${language}</span>`
+            return `<span class="child">${language}</span>`
         }).join('')}
       </div>
     </div>
@@ -63,12 +64,17 @@ for (let i = 0; i < jobFilters.length; i++) {
         selectedFilters.innerHTML += `
         <span>${e.target.innerText}</span>
         <img id="remove" class="remove" src="images/icon-remove.svg"></img>` 
-        console.log(filterArr);
+        // console.log(filterArr);
 
         //Toggle filter box
         filterArr.length !== 0 && filterBox.classList.remove('hidden');
 
-        // After we add the item to filterArr, we want to see what jobCards hold the value of filterArr. If they do not hold that value, we want to hide the car. 
+        // After we add the item to filterArr, we want to see what jobCards hold the value of filterArr. If they do not hold that value, we want to hide these card. 
+      
+
+        // This is where I'm stuck
+
+
 
 
       // Remove a selected filter item
@@ -81,13 +87,11 @@ for (let i = 0; i < jobFilters.length; i++) {
 
                 deleteFilter[i].previousElementSibling.innerText = '';
                 deleteFilter[i].parentNode.removeChild(deleteFilter[i]);
-                console.log(filterArr);
+                filterArr.length == 0 && filterBox.classList.add('hidden');
+
             })
         }
     })}
-
-  
-
     
     // Remove all filters and clear array
     clearAllFilters.addEventListener('click', () => {
@@ -97,9 +101,6 @@ for (let i = 0; i < jobFilters.length; i++) {
     });
 
     
-
-
-
 
 //////////// Attempted ideas /////////////
 
