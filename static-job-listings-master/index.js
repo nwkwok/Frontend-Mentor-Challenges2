@@ -14,8 +14,7 @@ const jobCard = document.getElementsByClassName('job-card-container');
 // Arrays
 let filterArr = [];
 
-
-data.forEach((data) => {
+  data.forEach((data) => {
     jobCardArea.innerHTML += `
     <div class="job-card-container">
     <div class="job-card-info">
@@ -47,8 +46,7 @@ data.forEach((data) => {
     </div>
   </div>
   `
-});
-
+  });  
 
 //Click on job filter and add it to the filters box
 for (let i = 0; i < jobFilters.length; i++) {
@@ -56,22 +54,25 @@ for (let i = 0; i < jobFilters.length; i++) {
         const filter = e.target.innerText;
         filterArr.push(filter);
         selectedFilters.innerHTML += `
-        <span>${e.target.innerText}</span>
-        <img id="remove" class="remove" src="images/icon-remove.svg"></img>` 
-
-        //Toggle filter box
+          <span>${e.target.innerText}</span>
+          <img id="remove" class="remove" src="images/icon-remove.svg"></img>
+          ` 
         filterArr.length !== 0 && filterBox.classList.remove('hidden');
 
-        // Loop through each card and create an array with that card's filter values
-        for (let i = 0; i < jobCard.length; i++) {
-          let cardArr = [];
-          cardArr.push(data[i].role, data[i].level, ...data[i].languages);
+          for (let i = 0; i < jobCard.length; i++) {
+            let cardArr = [];
+            cardArr.push(data[i].role, data[i].level, ...data[i].languages);
+  
+            const filterCards = cardArr.filter((card) => {
+              return filterArr.includes(card);
+            });
 
-          //Once you have the card value, check it to filterArr
-          if (!cardArr.includes(...filterArr)) {
-            jobCard[i].classList.add('hidden');
+              filterArr.forEach(filter => {
+                if (!filterCards.includes(filter)) {
+                jobCard[i].classList.add('hidden');
+              }});
           }
-        }  
+        
 
       // Remove a selected filter item
         for (let i = 0; i < deleteFilter.length; i++) {
@@ -80,11 +81,11 @@ for (let i = 0; i < jobFilters.length; i++) {
                 if (filterArr.includes(item)) {
                     filterArr.splice(filterArr.indexOf(item));
                 }
-                
+                // console.log(filterArr);
+
                 deleteFilter[i].previousElementSibling.innerText = '';
                 deleteFilter[i].parentNode.removeChild(deleteFilter[i]);
                 filterArr.length == 0 && filterBox.classList.add('hidden');
-
             })
         }
     })}
@@ -95,9 +96,10 @@ for (let i = 0; i < jobFilters.length; i++) {
         filterArr = [];
         filterArr.length == 0 && filterBox.classList.add('hidden');
 
+        //Restore all classes to hidden upon clearing array
         for (i = 0; i<jobCard.length; i++) {
           filterArr.length == 0 && jobCard[i].classList.remove('hidden');
         }
-
     });
+
 
