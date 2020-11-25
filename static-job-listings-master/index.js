@@ -1,5 +1,5 @@
 const jobCardArea = document.getElementById('jobCard')
-const jobFilters = document.getElementsByClassName('job-card-filters');
+const jobFilters = document.getElementsByClassName('child');
 const selectedFilters = document.getElementById('selectedFilters');
 const clearAllFilters = document.getElementById('clear');
 const deleteFilter = document.getElementsByClassName('remove');
@@ -78,11 +78,29 @@ for (let i = 0; i < jobFilters.length; i++) {
         for (let i = 0; i < deleteFilter.length; i++) {
             deleteFilter[i].addEventListener('click', () => {
                 const item = (deleteFilter[i].previousElementSibling.innerText);
-                if (filterArr.includes(item)) {
+         
                     filterArr.splice(filterArr.indexOf(item));
-                }
-                // console.log(filterArr);
+                    // Loop through the cards
+                    // For the ones that do not have 'item' remove hidden
 
+                    for (let i = 0; i < jobCard.length; i++) {
+                      let cardArr = [];
+                      cardArr.push(data[i].role, data[i].level, ...data[i].languages);
+
+                      if (!cardArr.includes(item)) {
+                        jobCard[i].classList.remove('hidden');
+                      }
+            
+                      // const filterCards = cardArr.filter((card) => {
+                      //   return filterArr.includes(card);
+                      // });
+
+                      // filterArr.forEach(filter => {
+                      //   if (!filterCards.includes(filter)) {
+                      //   jobCard[i].classList.remove('hidden');
+                      // }});
+                }
+              
                 deleteFilter[i].previousElementSibling.innerText = '';
                 deleteFilter[i].parentNode.removeChild(deleteFilter[i]);
                 filterArr.length == 0 && filterBox.classList.add('hidden');
