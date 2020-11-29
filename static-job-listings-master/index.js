@@ -14,8 +14,8 @@ const jobCard = document.getElementsByClassName('job-card-container');
 // Arrays
 let filterArr = [];
 
-  data.forEach((data) => {
-    jobCardArea.innerHTML += `
+data.forEach((data) => {
+  jobCardArea.innerHTML += `
     <div class="job-card-container">
     <div class="job-card-info">
       <div class="job-card-logo">
@@ -46,78 +46,80 @@ let filterArr = [];
     </div>
   </div>
   `
-  });  
+});
 
 //Click on job filter and add it to the filters box
 for (let i = 0; i < jobFilters.length; i++) {
-    jobFilters[i].addEventListener('click', (e) => {
-        const filter = e.target.innerText;
-        filterArr.push(filter);
-        selectedFilters.innerHTML += `
+  jobFilters[i].addEventListener('click', (e) => {
+    const filter = e.target.innerText;
+
+    if (!filterArr.includes(filter)) {
+      filterArr.push(filter);
+
+    selectedFilters.innerHTML += `
           <span>${e.target.innerText}</span>
           <img id="remove" class="remove" src="images/icon-remove.svg"></img>
-          ` 
-        filterArr.length !== 0 && filterBox.classList.remove('hidden');
+          `
+    filterArr.length !== 0 && filterBox.classList.remove('hidden');
 
-          for (let i = 0; i < jobCard.length; i++) {
-            let cardArr = [];
-            cardArr.push(data[i].role, data[i].level, ...data[i].languages);
-  
-            const filterCards = cardArr.filter((card) => {
-              return filterArr.includes(card);
-            });
+    for (let i = 0; i < jobCard.length; i++) {
+      let cardArr = [];
+      cardArr.push(data[i].role, data[i].level, ...data[i].languages);
 
-              filterArr.forEach(filter => {
-                if (!filterCards.includes(filter)) {
-                jobCard[i].classList.add('hidden');
-              }});
-          }
-        
+      const filterCards = cardArr.filter((card) => {
+        return filterArr.includes(card);
+      });
 
-      // Remove a selected filter item
-        for (let i = 0; i < deleteFilter.length; i++) {
-            deleteFilter[i].addEventListener('click', () => {
-                const item = (deleteFilter[i].previousElementSibling.innerText);
-         
-                    filterArr.splice(filterArr.indexOf(item));
-                    // Loop through the cards
-                    // For the ones that do not have 'item' remove hidden
-
-                    for (let i = 0; i < jobCard.length; i++) {
-                      let cardArr = [];
-                      cardArr.push(data[i].role, data[i].level, ...data[i].languages);
-
-                      if (!cardArr.includes(item)) {
-                        jobCard[i].classList.remove('hidden');
-                      }
-            
-                      // const filterCards = cardArr.filter((card) => {
-                      //   return filterArr.includes(card);
-                      // });
-
-                      // filterArr.forEach(filter => {
-                      //   if (!filterCards.includes(filter)) {
-                      //   jobCard[i].classList.remove('hidden');
-                      // }});
-                }
-              
-                deleteFilter[i].previousElementSibling.innerText = '';
-                deleteFilter[i].parentNode.removeChild(deleteFilter[i]);
-                filterArr.length == 0 && filterBox.classList.add('hidden');
-            })
+      filterArr.forEach(filter => {
+        if (!filterCards.includes(filter)) {
+          jobCard[i].classList.add('hidden');
         }
-    })}
-    
-    // Remove all filters and clear array
-    clearAllFilters.addEventListener('click', () => {
-        selectedFilters.innerHTML = ''
-        filterArr = [];
+      });
+    }
+  }
+
+
+    // Remove a selected filter item
+    for (let i = 0; i < deleteFilter.length; i++) {
+      deleteFilter[i].addEventListener('click', () => {
+        const item = (deleteFilter[i].previousElementSibling.innerText);
+
+        filterArr.splice(filterArr.indexOf(item));
+     
+
+        // Loop through the cards
+        // For the ones that do not have 'item' remove hidden
+
+        for (let i = 0; i < jobCard.length; i++) {
+          let cardArr = [];
+          cardArr.push(data[i].role, data[i].level, ...data[i].languages);
+
+          if (!cardArr.includes(item)) {
+            jobCard[i].classList.remove('hidden');
+          }
+
+        }
+
+        deleteFilter[i].previousElementSibling.innerText = '';
+        deleteFilter[i].previousElementSibling.remove();
+        deleteFilter[i].parentNode.removeChild(deleteFilter[i]);
         filterArr.length == 0 && filterBox.classList.add('hidden');
 
-        //Restore all classes to hidden upon clearing array
-        for (i = 0; i<jobCard.length; i++) {
-          filterArr.length == 0 && jobCard[i].classList.remove('hidden');
-        }
-    });
+        console.log(filterArr);
+        
+      })
+    }
+  })
+}
 
+// Remove all filters and clears array
+clearAllFilters.addEventListener('click', () => {
+  selectedFilters.innerHTML = ''
+  filterArr = [];
+  filterArr.length == 0 && filterBox.classList.add('hidden');
 
+  // Restore all classes to hidden upon clearing array
+  for (i = 0; i < jobCard.length; i++) {
+    filterArr.length == 0 && jobCard[i].classList.remove('hidden');
+  }
+});

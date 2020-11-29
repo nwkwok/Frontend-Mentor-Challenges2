@@ -1,0 +1,10 @@
+@import '../../../styles/variables.scss';
+
+.container {
+    height: 60px;
+    width: 90%;
+    display: flex; 
+    justify-content: space-between;
+    align-content: center;
+    margin: 0 auto;
+}
