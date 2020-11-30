@@ -5,3 +5,15 @@
     width: 100%;
     background-color: $veryDarkBlueBackground;
 }
+
+.cardContainer {
+    width: 90%;
+    height: 280px;
+    background-color: $veryDarkBlueBackground;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
