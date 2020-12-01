@@ -6,6 +6,7 @@ import Country from './components/Country';
 
 function App() {
   const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState('');
 
   useEffect(() => {
     async function getCountries() {
@@ -27,15 +28,25 @@ function App() {
     getCountries();
   }, []);
 
+  const handleChange = e => {
+    setCountry(e.target.value)
+    console.log(country);
+  }
+
+  //const output = { input ? countries.filter : countries.map }
+
+
 
   return (
     
       <div className={styles.container}>
         <Navbar />
-        <Selection />
+        <Selection 
+          country={country}
+          handleChange={handleChange}/>
 
         <div className={styles.cardContainer}>
-          
+
           {countries.map(card => {
             return (
               <Country

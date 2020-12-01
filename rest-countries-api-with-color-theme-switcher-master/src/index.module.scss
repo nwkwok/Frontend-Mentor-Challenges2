@@ -28,4 +28,8 @@ select {
   color: white;
 }
 
+input:focus, select:focus {
+  outline: none;
+}
+
 
