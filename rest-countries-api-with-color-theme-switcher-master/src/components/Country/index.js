@@ -5,8 +5,10 @@ function Country(props) {
   console.log(props);
   return (
       <div className={styles.card}>
-        <div className={styles.imageContainer}>
-        <img className={styles.flag} src={props.flag} alt="flag"></img>
+        <div className={styles.imageContainer} 
+          style={{
+            backgroundImage: `url(${props.flag})`,
+            }}>
         </div>
         <h4>{props.country}</h4>
         <div className={styles.info}>

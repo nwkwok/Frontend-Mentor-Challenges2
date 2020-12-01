@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    
       <div className={styles.container}>
         <Navbar />
         <Selection />
@@ -48,7 +48,7 @@ function App() {
           })}
         </div>
       </div>
-    </>
+   
   );
 }
 

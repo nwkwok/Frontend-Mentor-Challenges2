@@ -11,7 +11,9 @@ function Filter() {
     return (
         <div className={styles.filter}>
             <label>
-            <select selected value={select} onChange={handleChange}>
+            <select value={select} onChange={handleChange}>
+                {/* Look up default react option  */}
+                <option disabled selected value='Filter By Region'>Filter By Region</option>
                 <option value="Africa">Africa</option>
                 <option value="America">America</option>
                 <option value="Asia">Asia</option>
@@ -19,7 +21,6 @@ function Filter() {
                 <option value="Oceania">Oceania</option>
             </select>
             </label>
-
         </div>
     )
 }
