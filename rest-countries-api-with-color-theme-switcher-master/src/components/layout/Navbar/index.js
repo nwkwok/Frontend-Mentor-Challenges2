@@ -7,7 +7,7 @@ function index() {
         <div className={styles.container}>
             <div className={styles.containerContent}>
             <p className={styles.bold}>Where in the world?</p>
-            <p><i class="fas fa-moon"></i> toggle mode</p>
+            <p><i className="fas fa-moon"></i> toggle mode</p>
             </div>
         </div>
     )

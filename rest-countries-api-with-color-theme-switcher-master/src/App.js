@@ -11,7 +11,7 @@ function App() {
     async function getCountries() {
       const response = await fetch('https://restcountries.eu/rest/v2/all');
       const body = await response.json();
-      console.log(body);
+      // console.log(body);
       setCountries(body.map((country) => {
           return {
             flag: country.flag,
@@ -27,13 +27,15 @@ function App() {
     getCountries();
   }, []);
 
+
   return (
     
       <div className={styles.container}>
         <Navbar />
         <Selection />
-        <div className={styles.cardContainer}>
 
+        <div className={styles.cardContainer}>
+          
           {countries.map(card => {
             return (
               <Country

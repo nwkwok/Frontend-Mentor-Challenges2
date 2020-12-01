@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Country.module.scss';
 
 function Country(props) {
-  console.log(props);
+  // console.log(props);
   return (
       <div className={styles.card}>
         <div className={styles.imageContainer} 

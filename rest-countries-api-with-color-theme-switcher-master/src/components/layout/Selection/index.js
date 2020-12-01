@@ -9,7 +9,6 @@ function index() {
         <div className={styles.container}>
             <Input />
             <Filter />
-
         </div>
         </>
     )
