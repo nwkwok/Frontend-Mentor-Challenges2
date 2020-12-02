@@ -9,8 +9,12 @@ function Selection(props) {
         <div className={styles.container}>
             <Input 
                 country={props.country}
-                handleChange={props.handleChange}/>
-            <Filter />
+                handleCountryChange={props.handleCountryChange}
+                />
+            <Filter 
+                region={props.region}
+                handleRegionChange={props.handleRegionChange}
+                />
         </div>
         </>
     )

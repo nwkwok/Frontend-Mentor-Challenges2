@@ -1,20 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './Filter.module.scss';
 
-function Filter() {
-    const [select, setSelect] = useState('Filter by Region');
-    console.log(select);
-
-    const handleChange = e => {
-        setSelect(e.target.value);
-    }
-
+function Filter(props) {
+    
     return (
         <div className={styles.filter}>
-            <select value={select} defaultValue={'Filter by Region'} onChange={handleChange}>
-                <option value='Filter By Region' disabled>Filter By Region</option>
+            <select 
+                    // value={props.region} 
+                    defaultValue={props.region} 
+                    onChange={props.handleRegionChange}
+                    >
+                <option value='Filter By Region'>Filter By Region</option>
                 <option value="Africa">Africa</option>
-                <option value="America">America</option>
+                <option value="Americas">Americas</option>
                 <option value="Asia">Asia</option>
                 <option value="Europe">Europe</option>
                 <option value="Oceania">Oceania</option>

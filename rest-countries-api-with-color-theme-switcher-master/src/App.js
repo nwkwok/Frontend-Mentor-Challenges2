@@ -7,12 +7,12 @@ import Country from './components/Country';
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('');
+  const [region, setRegion] = useState('Filter by Region');
 
   useEffect(() => {
     async function getCountries() {
       const response = await fetch('https://restcountries.eu/rest/v2/all');
       const body = await response.json();
-      // console.log(body);
       setCountries(body.map((country) => {
           return {
             flag: country.flag,
@@ -28,37 +28,76 @@ function App() {
     getCountries();
   }, []);
 
-  const handleChange = e => {
+ 
+   
+
+  const handleCountryChange = e => {
     setCountry(e.target.value)
-    console.log(country);
   }
 
-  //const output = { input ? countries.filter : countries.map }
+  const handleRegionChange = async e => {
+    const response = await fetch(`https://restcountries.eu/rest/v2/region/${e.target.value}`)
+    const body = await response.json();
+    console.log(body);
 
+    setRegion(body.map(country => {
+      return {
+      flag: country.flag,
+      country: country.name,
+      population: country.population,
+      region: country.region,
+      capital: country.capital
+      }
+    })
+    )
+  }
 
+  const filteredCountry = countries.filter(card => 
+    card.country.toLowerCase().includes(country.toLowerCase()))
+
+  const allCountries = countries.map(card =>{
+    return(
+      <Country
+        key={card.country}
+        flag={card.flag}
+        country={card.country}
+        population={card.population}
+        region={card.region}
+        capital={card.capital}
+    />
+    );
+  });
+
+  const output = 
+    country ? 
+    
+      filteredCountry.map(card => {
+        return (
+          <Country
+            key={card.country}
+            flag={card.flag}
+            country={card.country}
+            population={card.population}
+            region={card.region}
+            capital={card.capital}
+            />
+          )}
+        )
+      :
+      allCountries
 
   return (
-    
       <div className={styles.container}>
         <Navbar />
         <Selection 
           country={country}
-          handleChange={handleChange}/>
+          handleCountryChange={handleCountryChange}
+          region={region}
+          handleRegionChange={handleRegionChange}
+          />
 
         <div className={styles.cardContainer}>
-
-          {countries.map(card => {
-            return (
-              <Country
-                key={card.country}
-                flag={card.flag}
-                country={card.country}
-                population={card.population}
-                region={card.region}
-                capital={card.capital}
-              />
-            );
-          })}
+          {output}
         </div>
       </div>
    
