@@ -6,11 +6,10 @@ function Filter(props) {
     return (
         <div className={styles.filter}>
             <select 
-                    // value={props.region} 
                     defaultValue={props.region} 
                     onChange={props.handleRegionChange}
                     >
-                <option value='Filter By Region'>Filter By Region</option>
+                <option >Filter by region</option>
                 <option value="Africa">Africa</option>
                 <option value="Americas">Americas</option>
                 <option value="Asia">Asia</option>

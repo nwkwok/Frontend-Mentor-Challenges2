@@ -13,95 +13,94 @@ function App() {
     async function getCountries() {
       const response = await fetch('https://restcountries.eu/rest/v2/all');
       const body = await response.json();
-      setCountries(body.map((country) => {
-          return {
-            flag: country.flag,
-            country: country.name,
-            population: country.population,
-            region: country.region,
-            capital: country.capital
-          }
-          ;
+      setCountries(
+        body.map((country) => {
+          return standardize(country);
         })
       );
     }
     getCountries();
   }, []);
 
- 
-   
+  const handleCountryChange = (e) => {
+    setCountry(e.target.value);
+  };
 
-  const handleCountryChange = e => {
-    setCountry(e.target.value)
-  }
+  const handleRegionChange = async (e) => {
 
-  const handleRegionChange = async e => {
-    const response = await fetch(`https://restcountries.eu/rest/v2/region/${e.target.value}`)
-    const body = await response.json();
-    console.log(body);
-
-    setRegion(body.map(country => {
-      return {
-      flag: country.flag,
-      country: country.name,
-      population: country.population,
-      region: country.region,
-      capital: country.capital
-      }
-    })
-    )
-  }
-
-  const filteredCountry = countries.filter(card => 
-    card.country.toLowerCase().includes(country.toLowerCase()))
-
-  const allCountries = countries.map(card =>{
-    return(
-      <Country
-        key={card.country}
-        flag={card.flag}
-        country={card.country}
-        population={card.population}
-        region={card.region}
-        capital={card.capital}
-    />
+    const response = await fetch(
+      `https://restcountries.eu/rest/v2/region/${e.target.value}`
     );
+    const body = await response.json();
+
+    const getRegion = body.map((country) => {
+      return standardize(country);
+    });
+    setRegion(getRegion);
+
+
+    // const filteredRegion = filteredCountry.filter(card => {
+    //   card.region.toLowerCase().includes(region.region.toLowerCase());
+    // })
+  };
+
+//Filter country by input state
+  const filteredCountry = countries.filter((card) =>
+    card.country.toLowerCase().includes(country.toLowerCase())
+  );
+
+//Render all country commponent cards
+  const allCountries = countries.map((card) => {
+    return returnCard(card);
   });
 
-  const output = 
-    country ? 
-    
-      filteredCountry.map(card => {
-        return (
-          <Country
-            key={card.country}
-            flag={card.flag}
-            country={card.country}
-            population={card.population}
-            region={card.region}
-            capital={card.capital}
-            />
-          )}
-        )
-      :
-      allCountries
+//Render cards after filtering input value
+  const output = country ? filteredCountry.map((card) => {
+        return returnCard(card);
+      })
+    : allCountries;
+
 
   return (
-      <div className={styles.container}>
-        <Navbar />
-        <Selection 
-          country={country}
-          handleCountryChange={handleCountryChange}
-          region={region}
-          handleRegionChange={handleRegionChange}
-          />
-
-        <div className={styles.cardContainer}>
-          {output}
-        </div>
+    <div className={styles.container}>
+      <Navbar />
+      <Selection
+        country={country}
+        handleCountryChange={handleCountryChange}
+        region={region}
+        handleRegionChange={handleRegionChange}
+      />
+      <div className={styles.cardContainer}>
+        {output}
       </div>
-   
+    </div>
   );
 }
+
+
+// Helper Functions
+const standardize = (item) => {
+  return {
+    flag: item.flag,
+    country: item.name,
+    population: item.population,
+    region: item.region,
+    capital: item.capital,
+  };
+};
+
+const returnCard = (item) => {
+  return (
+    <Country
+      key={item.country}
+      flag={item.flag}
+      country={item.country}
+      population={item.population}
+      region={item.region}
+      capital={item.capital}
+    />
+  );
+}
+
 
 export default App;
