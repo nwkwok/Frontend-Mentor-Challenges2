@@ -7,7 +7,7 @@ import Country from './components/Country';
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('');
-  const [region, setRegion] = useState('Filter by Region');
+  const [region, setRegion] = useState('Filter by Region'); 
 
   useEffect(() => {
     async function getCountries() {
@@ -38,11 +38,19 @@ function App() {
     });
     setRegion(getRegion);
 
+    // region state is set to drop down selection which hits API endpoint and country components through getRegion
+    // How do I run the logic to factor in the state of country? 
+        // Do I need logic for:
+            // country && region
+            // country || region
+            // region ? then do country? 
+        }
+
 
     // const filteredRegion = filteredCountry.filter(card => {
     //   card.region.toLowerCase().includes(region.region.toLowerCase());
     // })
-  };
+  // };
 
 //Filter country by input state
   const filteredCountry = countries.filter((card) =>
