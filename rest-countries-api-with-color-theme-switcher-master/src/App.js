@@ -7,7 +7,7 @@ import Country from './components/Country';
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('');
-  const [region, setRegion] = useState('Filter by Region'); 
+  const [region, setRegion] = useState(''); 
 
   useEffect(() => {
     async function getCountries() {
@@ -22,52 +22,47 @@ function App() {
     getCountries();
   }, []);
 
+// Sets state of country to input value
   const handleCountryChange = (e) => {
     setCountry(e.target.value);
   };
 
-  const handleRegionChange = async (e) => {
+// Sets state of filter, fetches the region of dropdown select value and sets state to an array that holds all countries from that region 
+  const handleRegionChange = (e) => {
+    setRegion(e.target.value);
 
-    const response = await fetch(
-      `https://restcountries.eu/rest/v2/region/${e.target.value}`
-    );
-    const body = await response.json();
-
-    const getRegion = body.map((country) => {
-      return standardize(country);
-    });
-    setRegion(getRegion);
-
-    // region state is set to drop down selection which hits API endpoint and country components through getRegion
-    // How do I run the logic to factor in the state of country? 
-        // Do I need logic for:
-            // country && region
-            // country || region
-            // region ? then do country? 
-        }
-
-
-    // const filteredRegion = filteredCountry.filter(card => {
-    //   card.region.toLowerCase().includes(region.region.toLowerCase());
-    // })
-  // };
-
-//Filter country by input state
-  const filteredCountry = countries.filter((card) =>
-    card.country.toLowerCase().includes(country.toLowerCase())
-  );
+    }
 
 //Render all country commponent cards
-  const allCountries = countries.map((card) => {
-    return returnCard(card);
-  });
+const allCountries = countries.map((card) => {
+  return returnCard(card);
+});
+
+//Return countries based off Region
+
+//Filter country by input state
+  const filteredCountry = countries.filter((card) => {
+    return card.country.toLowerCase().includes(country.toLowerCase())
+  }).filter((card) => {
+    if (region !== 'Filter by region') {
+      return card.region === region
+    }
+    return filteredCountry;
+  })
+
+
 
 //Render cards after filtering input value
-  const output = country ? filteredCountry.map((card) => {
+  const output = (
+
+    country && region === 'Filter by Region' ? filteredCountry :
+  
+    country ? filteredCountry.map((card) => {
         return returnCard(card);
       })
-    : allCountries;
-
+    : 
+    allCountries
+  )
 
   return (
     <div className={styles.container}>
