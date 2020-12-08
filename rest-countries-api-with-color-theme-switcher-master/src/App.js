@@ -6,8 +6,8 @@ import Country from './components/Country';
 
 function App() {
   const [countries, setCountries] = useState([]);
-  const [country, setCountry] = useState('');
-  const [region, setRegion] = useState(''); 
+  const [input, setInput] = useState('');
+  const [region, setRegion] = useState('Filter by Region'); 
 
   useEffect(() => {
     async function getCountries() {
@@ -24,57 +24,64 @@ function App() {
 
 // Sets state of country to input value
   const handleCountryChange = (e) => {
-    setCountry(e.target.value);
+    setInput(e.target.value);
   };
 
 // Sets state of filter, fetches the region of dropdown select value and sets state to an array that holds all countries from that region 
   const handleRegionChange = (e) => {
     setRegion(e.target.value);
-
+    setInput('');
     }
-
-//Render all country commponent cards
-const allCountries = countries.map((card) => {
-  return returnCard(card);
-});
-
-//Return countries based off Region
-
-//Filter country by input state
-  const filteredCountry = countries.filter((card) => {
-    return card.country.toLowerCase().includes(country.toLowerCase())
-  }).filter((card) => {
-    if (region !== 'Filter by region') {
-      return card.region === region
-    }
-    return filteredCountry;
-  })
-
-
 
 //Render cards after filtering input value
-  const output = (
+  let filteredCountries = countries.filter(country => {
+    if (region === 'Filter by Region') {
+      return true;
+    } 
+    return country.region === region
+  })
 
-    country && region === 'Filter by Region' ? filteredCountry :
-  
-    country ? filteredCountry.map((card) => {
-        return returnCard(card);
+  //Filter country by input state
+  filteredCountries = filteredCountries
+  .filter((country) => {
+    return country.country.toLowerCase().includes(input.toLowerCase())
+  });
+
+
+  const ListOfCards = ({list}) => {
+    return(
+    <>
+      {
+        list.map(item => {
+        return (
+          <Country
+            key={item.country}
+            flag={item.flag}
+            country={item.country}
+            population={item.population}
+            region={item.region}
+            capital={item.capital}
+        />
+        )
       })
-    : 
-    allCountries
-  )
+      }
+    </>
+    )
+  }
+
 
   return (
     <div className={styles.container}>
       <Navbar />
       <Selection
-        country={country}
+        country={input}
         handleCountryChange={handleCountryChange}
         region={region}
         handleRegionChange={handleRegionChange}
       />
       <div className={styles.cardContainer}>
-        {output}
+        <ListOfCards 
+          list={filteredCountries}/>
       </div>
     </div>
   );
@@ -91,19 +98,5 @@ const standardize = (item) => {
     capital: item.capital,
   };
 };
-
-const returnCard = (item) => {
-  return (
-    <Country
-      key={item.country}
-      flag={item.flag}
-      country={item.country}
-      population={item.population}
-      region={item.region}
-      capital={item.capital}
-    />
-  );
-}
-
 
 export default App;

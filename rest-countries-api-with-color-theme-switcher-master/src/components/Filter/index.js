@@ -8,7 +8,7 @@ function Filter(props) {
                     defaultValue={props.region} 
                     onChange={props.handleRegionChange}
                     >
-                <option disabled>Filter by Region</option>
+                <option value="Filter by Region">Filter by Region</option>
                 <option value="Africa">Africa</option>
                 <option value="Americas">Americas</option>
                 <option value="Asia">Asia</option>
