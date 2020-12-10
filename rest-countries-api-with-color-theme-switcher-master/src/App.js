@@ -3,11 +3,13 @@ import styles from './App.module.scss';
 import Navbar from './components/layout/Navbar';
 import Selection from './components/layout/Selection';
 import Country from './components/Country';
+import { Switch, Route } from 'react-router-dom';
+import CountryPage from './components/CountryPage/CountryPage';
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [input, setInput] = useState('');
-  const [region, setRegion] = useState('Filter by Region'); 
+  const [region, setRegion] = useState('Filter by Region');
 
   useEffect(() => {
     async function getCountries() {
@@ -22,71 +24,73 @@ function App() {
     getCountries();
   }, []);
 
-// Sets state of country to input value
+  // Sets state of country to input value
   const handleCountryChange = (e) => {
     setInput(e.target.value);
   };
 
-// Sets state of filter, fetches the region of dropdown select value and sets state to an array that holds all countries from that region 
+  // Sets state of filter, fetches the region of dropdown select value and sets state to an array that holds all countries from that region
   const handleRegionChange = (e) => {
     setRegion(e.target.value);
     setInput('');
-    }
+  };
 
-//Render cards after filtering input value
-  let filteredCountries = countries.filter(country => {
+  //Render cards after filtering input value
+  let filteredCountries = countries.filter((country) => {
     if (region === 'Filter by Region') {
       return true;
-    } 
-    return country.region === region
-  })
-
-  //Filter country by input state
-  filteredCountries = filteredCountries
-  .filter((country) => {
-    return country.country.toLowerCase().includes(input.toLowerCase())
+    }
+    return country.region === region;
   });
 
+  //Filter country by input state
+  filteredCountries = filteredCountries.filter((country) => {
+    return country.country.toLowerCase().includes(input.toLowerCase());
+  });
 
-  const ListOfCards = ({list}) => {
-    return(
-    <>
-      {
-        list.map(item => {
-        return (
-          <Country
-            key={item.country}
-            flag={item.flag}
-            country={item.country}
-            population={item.population}
-            region={item.region}
-            capital={item.capital}
-        />
-        )
-      })
-      }
-    </>
-    )
-  }
-
+  const ListOfCards = ({ list }) => {
+    return (
+      <>
+        {list.map((item) => {
+          return (
+            <Country
+              key={item.country}
+              flag={item.flag}
+              country={item.country}
+              population={item.population}
+              region={item.region}
+              capital={item.capital}
+            />
+          );
+        })}
+      </>
+    );
+  };
 
   return (
     <div className={styles.container}>
       <Navbar />
-      <Selection
-        country={input}
-        handleCountryChange={handleCountryChange}
-        region={region}
-        handleRegionChange={handleRegionChange}
+      <Switch>
+        <Route path='/countryPage'>
+          <CountryPage />
+        </Route>
+
+        <Route path="/">
+        <Selection
+          country={input}
+          handleCountryChange={handleCountryChange}
+          region={region}
+          handleRegionChange={handleRegionChange}
       />
       <div className={styles.cardContainer}>
-        <ListOfCards 
-          list={filteredCountries}/>
+        <ListOfCards list={filteredCountries} />
       </div>
+        </Route>
+      </Switch>
+
     </div>
   );
 }
-
 
 // Helper Functions
 const standardize = (item) => {

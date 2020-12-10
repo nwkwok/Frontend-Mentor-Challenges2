@@ -42,7 +42,7 @@ h4 {
     
 }
 
-@media (max-width: 662px) {
+@media (max-width: 1005px) {
     .card {
         display: block;
         margin-left: auto;
@@ -51,7 +51,3 @@ h4 {
 }
 
 
-// When we get to 600px show 2 cards
-// when 800px show 3 cards
-// when >1000px show 4 cards 
-// Look up how to set max number of flex items per row

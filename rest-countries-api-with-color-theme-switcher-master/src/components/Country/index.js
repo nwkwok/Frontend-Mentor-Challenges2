@@ -4,11 +4,7 @@ import styles from './Country.module.scss';
 function Country(props) {
   return (
       <div className={styles.card}>
-        <div className={styles.imageContainer}
-          // style={{
-          //   backgroundImage: `url(${props.flag})`,
-          //   }}>
-          >
+        <div className={styles.imageContainer}>
           <img className={styles.flag} src={props.flag} alt="flag"></img>
 
         </div>
