@@ -3,7 +3,10 @@ import styles from './Country.module.scss';
 
 function Country(props) {
   return (
-      <div className={styles.card}>
+      <div 
+        className={styles.card}
+        onClick={props.onClick}
+        >
         <div className={styles.imageContainer}>
           <img className={styles.flag} src={props.flag} alt="flag"></img>
 

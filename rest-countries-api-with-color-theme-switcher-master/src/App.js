@@ -3,13 +3,14 @@ import styles from './App.module.scss';
 import Navbar from './components/layout/Navbar';
 import Selection from './components/layout/Selection';
 import Country from './components/Country';
-import { Switch, Route } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 import CountryPage from './components/CountryPage/CountryPage';
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [input, setInput] = useState('');
   const [region, setRegion] = useState('Filter by Region');
+  // const [page, setPage] = useState('')
 
   useEffect(() => {
     async function getCountries() {
@@ -33,7 +34,7 @@ function App() {
   const handleRegionChange = (e) => {
     setRegion(e.target.value);
     setInput('');
-  };
+  }
 
   //Render cards after filtering input value
   let filteredCountries = countries.filter((country) => {
@@ -48,11 +49,14 @@ function App() {
     return country.country.toLowerCase().includes(input.toLowerCase());
   });
 
-  const ListOfCards = ({ list }) => {
+  const ListOfCards = ({list}) => {
+
     return (
       <>
         {list.map((item) => {
+
           return (
+            <Link key={item.country} to={`/${item.country}`} style={{textDecoration: 'none'}}>
             <Country
               key={item.country}
               flag={item.flag}
@@ -61,6 +65,7 @@ function App() {
               region={item.region}
               capital={item.capital}
             />
+            </Link>
           );
         })}
       </>
@@ -71,21 +76,21 @@ function App() {
     <div className={styles.container}>
       <Navbar />
       <Switch>
-        <Route path='/countryPage'>
-          <CountryPage />
+        <Route exact path="/">
+          <Selection
+            country={input}
+            handleCountryChange={handleCountryChange}
+            region={region}
+            handleRegionChange={handleRegionChange}
+        />
+        <div className={styles.cardContainer}>
+          <ListOfCards 
+            list={filteredCountries}
+            />
+        </div>
         </Route>
-
-        <Route path="/">
-        <Selection
-          country={input}
-          handleCountryChange={handleCountryChange}
-          region={region}
-          handleRegionChange={handleRegionChange}
-      />
-      <div className={styles.cardContainer}>
-        <ListOfCards list={filteredCountries} />
-      </div>
-        </Route>
+        <Route 
+          path='/:countryName' component={CountryPage} />
       </Switch>
 
     </div>
