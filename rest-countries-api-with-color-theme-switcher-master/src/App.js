@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styles from './App.module.scss';
-import Navbar from './components/layout/Navbar';
+import Navbar from './components/layout/Navbar/Navbar';
 import Selection from './components/layout/Selection';
 import Country from './components/Country';
 import { Link, Switch, Route } from 'react-router-dom';
 import CountryPage from './components/CountryPage/CountryPage';
+import { ThemeContext, ThemeContextProvider} from './context/ThemeContext'
 
 function App() {
+  // const { darkTheme, setDarkTheme } = useContext(ThemeContext)
   const [countries, setCountries] = useState([]);
   const [input, setInput] = useState('');
   const [region, setRegion] = useState('Filter by Region');
   // const [page, setPage] = useState('')
+
 
   useEffect(() => {
     async function getCountries() {
@@ -56,7 +59,9 @@ function App() {
         {list.map((item) => {
 
           return (
-            <Link key={item.country} to={`/${item.country}`} style={{textDecoration: 'none'}}>
+            <Link key={item.country} 
+              to={`/${item.country}`} 
+              style={{textDecoration: 'none'}}>
             <Country
               key={item.country}
               flag={item.flag}
@@ -73,7 +78,8 @@ function App() {
   };
 
   return (
-    <div className={styles.container}>
+    <ThemeContextProvider>
+      <div className={styles.container}>
       <Navbar />
       <Switch>
         <Route exact path="/">
@@ -92,8 +98,8 @@ function App() {
         <Route 
           path='/:countryName' component={CountryPage} />
       </Switch>
-
     </div>
+    </ThemeContextProvider>
   );
 }
 

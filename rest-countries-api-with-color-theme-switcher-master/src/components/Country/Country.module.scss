@@ -2,7 +2,7 @@
 
 .card {
     color: $white;
-    margin: 25px 15px;
+    margin: 25px 20px;
     background-color: $darkBlue;
     height: 100%;
     border-radius: 10px;
@@ -11,7 +11,7 @@
 
 .imageContainer {
     height: auto;
-    max-width: 300px;
+    max-width: 275px;
 
     & img {
         display: block;
@@ -42,12 +42,6 @@ h4 {
     
 }
 
-@media (max-width: 1005px) {
-    .card {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
+
 
 

@@ -1,8 +1,9 @@
 import styles from './Navbar.module.scss';
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from '../../../context/ThemeContext'
 
-
-function index() {
+function Navbar() {
+    const { darkTheme, setDarkThem } = useContext(ThemeContext)
     return (
         <div className={styles.container}>
             <div className={styles.containerContent}>
@@ -13,4 +14,4 @@ function index() {
     )
 }
 
-export default index
+export default Navbar

@@ -113,6 +113,7 @@ function CountryPage(props) {
           </div>
           <div className={style.infoBorders}>
               <span>Border Countries:</span>
+              <p className={style.btnBorderContainer}>
               {borderCountry.map(border => {
                   return (
                     <div key={border} className={style.btnBorder}>
@@ -120,6 +121,7 @@ function CountryPage(props) {
                     </div>
                   )
               })}
+              </p>
             
           </div>
         </div>
