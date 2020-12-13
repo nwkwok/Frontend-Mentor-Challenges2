@@ -46,7 +46,7 @@ function CountryPage(props) {
 
     }
     getCountry();
-  }, []);
+  });
 
   const {
     capital,
