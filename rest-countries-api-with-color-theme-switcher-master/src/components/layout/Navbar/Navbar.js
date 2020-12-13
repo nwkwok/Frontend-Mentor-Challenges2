@@ -1,9 +1,9 @@
 import styles from './Navbar.module.scss';
-import React, { useContext } from 'react'
-import { ThemeContext } from '../../../context/ThemeContext'
+import React from 'react'
+// import { ThemeContext } from '../../../context/ThemeContext'
 
 function Navbar() {
-    const { darkTheme, setDarkThem } = useContext(ThemeContext)
+    // const { darkTheme, setDarkThem } = useContext(ThemeContext)
     return (
         <div className={styles.container}>
             <div className={styles.containerContent}>

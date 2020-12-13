@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './App.module.scss';
 import Navbar from './components/layout/Navbar/Navbar';
 import Selection from './components/layout/Selection';
 import Country from './components/Country';
 import { Link, Switch, Route } from 'react-router-dom';
 import CountryPage from './components/CountryPage/CountryPage';
-import { ThemeContext, ThemeContextProvider} from './context/ThemeContext'
+// import { ThemeContext, ThemeContextProvider} from './context/ThemeContext'
 
 function App() {
   // const { darkTheme, setDarkTheme } = useContext(ThemeContext)
@@ -78,7 +78,7 @@ function App() {
   };
 
   return (
-    <ThemeContextProvider>
+    // <ThemeContextProvider>
       <div className={styles.container}>
       <Navbar />
       <Switch>
@@ -99,7 +99,7 @@ function App() {
           path='/:countryName' component={CountryPage} />
       </Switch>
     </div>
-    </ThemeContextProvider>
+    // </ThemeContextProvider>
   );
 }
 
