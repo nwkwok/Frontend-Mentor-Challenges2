@@ -7,6 +7,14 @@
     padding: 10px;
     border-radius: 5px;
     color: white;
+    transition: all .5s;
+
+    
+
+    &.light {
+        background-color: $white;
+        color: $veryDarkBlueText;
+    }
     
     &.empty {
         font-family: Nunito Sans, FontAwesome;
@@ -15,4 +23,5 @@
 
     }
 }
+
 

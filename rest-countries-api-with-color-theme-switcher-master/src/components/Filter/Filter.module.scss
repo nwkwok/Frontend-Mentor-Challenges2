@@ -8,4 +8,10 @@
     padding: 10px;
     border-radius: 5px;
     font-size: 14px;
+    transition: all .5s;
+
+    &.light {
+        background-color: $white;
+        color: $veryDarkBlueText;
+    }
 }

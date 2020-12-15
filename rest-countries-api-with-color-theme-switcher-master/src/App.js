@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styles from './App.module.scss';
 import Navbar from './components/layout/Navbar/Navbar';
 import Selection from './components/layout/Selection';
 import Country from './components/Country';
 import { Link, Switch, Route } from 'react-router-dom';
 import CountryPage from './components/CountryPage/CountryPage';
-// import { ThemeContext } from './context/ThemeContext'
+import { ThemeContext } from './context/ThemeContext'
 
 function App() {
-  // const { darkTheme, setDarkTheme } = useContext(ThemeContext)
+  const { darkTheme, setDarkTheme } = useContext(ThemeContext)
   const [countries, setCountries] = useState([]);
   const [input, setInput] = useState('');
   const [region, setRegion] = useState('Filter by Region');
@@ -77,9 +77,8 @@ function App() {
   };
 
 
-
-
   return (
+    
       <div className={styles.container}>
       <Navbar />
       <Switch>

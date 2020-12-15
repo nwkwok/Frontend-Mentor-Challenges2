@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext'
 import styles from './Filter.module.scss';
 
 function Filter(props) {
+    const { darkTheme } = useContext(ThemeContext)
+
     return (
-        <div className={styles.filter}>
+        <div className={darkTheme ? styles.filter : [styles.filter, styles.light].join(' ')}>
             <select 
                     defaultValue={props.region} 
                     onChange={props.handleRegionChange}

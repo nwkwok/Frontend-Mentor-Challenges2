@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import style from './CountryPage.module.scss';
 import { useHistory } from 'react-router-dom'
+import { ThemeContext } from '../../context/ThemeContext'
 
 function CountryPage(props) {
   const [info, setInfo] = useState([]);
   const [borderCountry, setBorderCountry] = useState([]);
+  const { darkTheme } = useContext(ThemeContext)
   let history = useHistory();
   const { countryName } = props.match.params;
 
@@ -72,7 +74,7 @@ function CountryPage(props) {
   return (
     <>
       <div onClick={handleClick} className={style.btnContainer}>
-        <div className={style.btn}>
+        <div className={darkTheme ? style.btn : [style.btn, style.light].join(' ')}>
           <i class='fas fa-arrow-left'></i> Back
         </div>
       </div>
@@ -85,7 +87,7 @@ function CountryPage(props) {
             alt={`${info.name} flag`}
           ></img>
         </div>
-        <div className={style.infoContainer}>
+        <div className={darkTheme ? style.infoContainer : [style.infoContainer, style.light].join(' ')}>
           <div className={style.infoHeading}>
             <h2>{name}</h2>
           </div>
@@ -116,7 +118,7 @@ function CountryPage(props) {
               <p className={style.btnBorderContainer}>
               {borderCountry.map(border => {
                   return (
-                    <div key={border} className={style.btnBorder}>
+                    <div key={border} className={darkTheme ? style.btnBorder : [style.btnBorder, style.light].join(' ')}>
                         {border}
                     </div>
                   )
