@@ -5,14 +5,13 @@ import Selection from './components/layout/Selection';
 import Country from './components/Country';
 import { Link, Switch, Route } from 'react-router-dom';
 import CountryPage from './components/CountryPage/CountryPage';
-// import { ThemeContext, ThemeContextProvider} from './context/ThemeContext'
+// import { ThemeContext } from './context/ThemeContext'
 
 function App() {
   // const { darkTheme, setDarkTheme } = useContext(ThemeContext)
   const [countries, setCountries] = useState([]);
   const [input, setInput] = useState('');
   const [region, setRegion] = useState('Filter by Region');
-  // const [page, setPage] = useState('')
 
 
   useEffect(() => {
@@ -77,8 +76,10 @@ function App() {
     );
   };
 
+
+
+
   return (
-    // <ThemeContextProvider>
       <div className={styles.container}>
       <Navbar />
       <Switch>
@@ -99,7 +100,6 @@ function App() {
           path='/:countryName' component={CountryPage} />
       </Switch>
     </div>
-    // </ThemeContextProvider>
   );
 }
 
