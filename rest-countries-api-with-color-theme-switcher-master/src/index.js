@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
-import './index.module.scss';
+import './index.scss';
 import App from './App';
 import { ThemeContextProvider } from './context/ThemeContext'
 

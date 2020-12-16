@@ -9,19 +9,22 @@
     color: white;
     transition: all .5s;
 
-    
-
     &.light {
         background-color: $white;
         color: $veryDarkBlueText;
+        &::placeholder {
+            color: $veryDarkBlueText;
+        }
     }
     
     &.empty {
         font-family: Nunito Sans, FontAwesome;
         font-style: normal;
         font-weight: normal;
-
     }
 }
 
+input::placeholder {
+    color: $white;
+}
 

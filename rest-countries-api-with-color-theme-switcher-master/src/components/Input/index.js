@@ -3,7 +3,7 @@ import { ThemeContext } from '../../context/ThemeContext'
 import styles from './Input.module.scss';
 
 function Input(props) {
-  const {darkTheme, setDarkTheme } = useContext(ThemeContext)
+  const { darkTheme } = useContext(ThemeContext)
 
   return (
     <div className={styles.inputContainer}>

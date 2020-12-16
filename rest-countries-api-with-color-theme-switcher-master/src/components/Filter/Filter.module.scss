@@ -13,5 +13,12 @@
     &.light {
         background-color: $white;
         color: $veryDarkBlueText;
+    
+        select {
+            color: $darkBlue;
+        }
     }
 }
+
+
+

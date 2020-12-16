@@ -7,6 +7,12 @@
     height: 100%;
     border-radius: 10px;
     overflow: hidden;    
+    transition: all .5s;
+
+    &.light {
+        color: $veryDarkBlueText;
+        background-color: $white;
+    }
 }
 
 .imageContainer {

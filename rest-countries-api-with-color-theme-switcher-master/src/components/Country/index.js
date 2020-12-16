@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext'
 import styles from './Country.module.scss';
 
 function Country(props) {
+  const {darkTheme} = useContext(ThemeContext)
   return (
       <div 
-        className={styles.card}
+        className={darkTheme ? styles.card : [styles.card, styles.light].join(' ')}
         onClick={props.onClick}
         >
         <div className={styles.imageContainer}>

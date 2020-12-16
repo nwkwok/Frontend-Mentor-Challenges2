@@ -8,7 +8,7 @@ import CountryPage from './components/CountryPage/CountryPage';
 import { ThemeContext } from './context/ThemeContext'
 
 function App() {
-  const { darkTheme, setDarkTheme } = useContext(ThemeContext)
+  const { darkTheme } = useContext(ThemeContext)
   const [countries, setCountries] = useState([]);
   const [input, setInput] = useState('');
   const [region, setRegion] = useState('Filter by Region');
@@ -79,7 +79,7 @@ function App() {
 
   return (
     
-      <div className={styles.container}>
+      <div className={darkTheme ? styles.container : [styles.container, styles.light].join(' ')}>
       <Navbar />
       <Switch>
         <Route exact path="/">
@@ -89,7 +89,7 @@ function App() {
             region={region}
             handleRegionChange={handleRegionChange}
         />
-        <div className={styles.cardContainer}>
+        <div className={darkTheme ? styles.cardContainer : [styles.cardContainer, styles.light].join(' ')}>
           <ListOfCards 
             list={filteredCountries}
             />
