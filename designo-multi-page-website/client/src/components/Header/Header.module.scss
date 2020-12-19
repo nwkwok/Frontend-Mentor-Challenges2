@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.headerContainer {
+    height: 100px;
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    & .logoContainer {
+        display: flex;
+        align-items: center;
+
+        & img { 
+            height: 20.54px;
+            margin-left: 10px;
+        }
+    }
+
+    & .navContainer {
+        & ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            & li {
+                margin-right: 15px;
+                letter-spacing: 2px;
+                font-size: 14px;
+            }
+        }
+    }
+
+}
