@@ -6,46 +6,59 @@
     background-color: $secondary-peach;
     border-radius: 15px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     overflow: hidden;
     margin-bottom: 100px;
     
     & .heroContent { 
         margin-left: 90px;
+        margin-top: -40px;
         color: $primary-white;
+        width: 60%;
 
         h3 {
         font-size: 48px;
         font-weight: 500;
+        margin-bottom: 30px;
         }
 
         p {
-            
+            font-size: 16px;
+            line-height: 1.5;
         }
 
     }
 
 
 
-    & .heroImageContainer{
+    & .heroImageContainer {
+
+        position: relative;
+        height: 100%;
+
+        img {
+            position: relative;
+            z-index: 10;
+            left: 80px;
+
+            
+        }
         
         & .oval {
             position: absolute;
             width: 640px;
-            height: 640px;
-            top: 140px;
-            right: 145px;
+            height: 640px;        
+            top: 0;
             background-color: $primary-black;
             background: linear-gradient(90deg, rgba(93, 2, 2, 0.0001) 0%, rgba(93, 2, 2, 0.497569) 100%);
             mix-blend-mode: normal;
             opacity: 0.31;
             border-radius: 50%;
+            z-index: 0
         }
 
-        img {
-            margin-top: 150px;
-        }
+
 
 
     

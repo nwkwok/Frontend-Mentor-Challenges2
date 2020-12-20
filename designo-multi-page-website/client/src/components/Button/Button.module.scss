@@ -1,16 +1,27 @@
 @import '../../styles/variables.scss';
 
 .buttonContainer {
-    height: 100px;
-    width: 100px;
-    background-color: $primary-white;
-    color: black;
+    margin-top: 50px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 152px;
+    border-radius: 10px;
+    font-size: 15px;
 
-    // &.dark{
 
-    // }
+    &.dark{
+        background-color: $primary-peach;
+        color: $primary-white;
+    }
 
-    // &.light{
+    &.light{
+        background-color: $primary-white;
+        color: $primary-black;
 
-    // }
+    }
+
+
+
 }
