@@ -1,18 +1,21 @@
 import React from 'react';
 import style from './Hero.module.scss';
 import hero from '../../assets/home/desktop/image-hero-phone.png';
-import LightButton from '../Button/LightButton'
+import Button from '../Button/Button'
 
 
 function Hero() {
   return (
     <div className={style.heroContainer}>
       <div className={style.heroContent}>
-        <h3>Award-winning custom designs and digital branding solutions</h3>
+        <div className={style.h3Container}>
+          <h3>Award-winning custom designs and digital branding solutions</h3>
+        </div>
         <p>With over 10 years in the industry, we are experienced in creating fully responsive website, app design, and engaging brand experiences. Find out more about our services.</p>
 
-        <LightButton
-            buttonContent='LEARN MORE' />
+        <Button
+            buttonContent='LEARN MORE'
+            type='light' />
 
       </div>
       <div className={style.heroImageContainer}>

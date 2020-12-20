@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+
+.container {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 100px;
+
+    & .passionate{
+        & img {
+            background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
+            background-size: cover;
+        }
+    }
+
+    & .resourceful{
+        & img {
+            background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
+            background-size: cover;
+        }
+
+    }
+
+    & .friendly{
+        & img {
+            background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
+            background-size: cover;
+        }
+
+    }
+
+    & .heading {
+        font-size: 20px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+    }   
+
+    & .description {
+        width: 330px;
+    }
+
+}

@@ -6,19 +6,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
     width: 152px;
     border-radius: 10px;
     font-size: 15px;
-
+    transition: all .5s;
+    cursor: pointer;
 
     &.dark{
         background-color: $primary-peach;
         color: $primary-white;
+        &:hover{
+            background-color: $secondary-peach;
+        }
     }
 
     &.light{
         background-color: $primary-white;
         color: $primary-black;
+        &:hover {
+            background-color: $secondary-peach;
+            color: $primary-white;
+        }
 
     }
 
