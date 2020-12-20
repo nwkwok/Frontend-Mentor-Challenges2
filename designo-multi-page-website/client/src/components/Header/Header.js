@@ -1,18 +1,19 @@
 import React from 'react';
 import DarkLogo from '../../assets/shared/desktop/logo-dark.png';
 import style from './Header.module.scss';
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
     <div className={style.headerContainer}>
       <div className={style.logoContainer}>
-        <img src={DarkLogo} alt='logo' />
+        <Link to='/'><img src={DarkLogo} alt='logo' /></Link>
       </div>
       <div className={style.navContainer}>
         <ul className={style.navLinks}>
-          <li>OUR COMPANY</li>
-          <li>LOCATION</li>
-          <li>CONTACT</li>
+          <li><Link to='/about-us'>OUR COMPANY</Link></li>
+          <li><Link to='/locations'>LOCATION</Link></li>
+          <li><Link to='contact'>CONTACT</Link></li>          
         </ul>
       </div>
     </div>

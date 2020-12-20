@@ -6,19 +6,20 @@ import YouTube from '../../assets/shared/desktop/icon-youtube.svg';
 import Twitter from '../../assets/shared/desktop/icon-twitter.svg';
 import Pinterest from '../../assets/shared/desktop/icon-pinterest.svg';
 import Instagram from '../../assets/shared/desktop/icon-instagram.svg';
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
     <div className={style.footerContainer}>
       <div className={style.footerContentTop}>
         <div className={style.logoContainer}>
-          <img src={LightLogo} alt='logo' />
+          <Link to='/'><img src={LightLogo} alt='logo' /></Link>
         </div>
         <div className={style.navContainer}>
           <ul className={style.navLinks}>
-            <li>OUR COMPANY</li>
-            <li>LOCATION</li>
-            <li>CONTACT</li>
+            <li><Link to='/about-us'>OUR COMPANY</Link></li>
+            <li><Link to='/locations'>LOCATION</Link></li>
+            <li><Link to='/contact'>CONTACT</Link></li>
           </ul>
         </div>
       </div>
@@ -41,11 +42,11 @@ function Footer() {
           </p>
         </div>
         <div className={style.socialMedia}>
-            <img src={Facebook} alt='social-media-icon-facebook' />
-            <img src={YouTube} alt='social-media-icon-youtube' />
-            <img src={Twitter} alt='social-media-icon-twitter' />
-            <img src={Pinterest} alt='social-media-icon-pinterest' />
-            <img src={Instagram} alt='social-media-icon-instagram' />
+            <Link to=''><img src={Facebook} alt='social-media-icon-facebook' /></Link>
+            <Link to=''><img src={YouTube} alt='social-media-icon-youtube' /></Link>
+            <Link to=''><img src={Twitter} alt='social-media-icon-twitter' /></Link>
+            <Link to=''><img src={Pinterest} alt='social-media-icon-pinterest' /></Link>
+            <Link to=''><img src={Instagram} alt='social-media-icon-instagram' /></Link>
         </div>
       </div>
     </div>

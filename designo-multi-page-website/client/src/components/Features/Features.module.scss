@@ -12,6 +12,23 @@
     letter-spacing: 1.5px;
     text-align: center;
 
+    & a {
+        text-decoration: none;
+        color: $primary-white;
+        cursor: pointer;
+        transition: all .5s;
+
+
+        &:hover{
+            background-color: $primary-peach;
+
+            & img {
+                opacity: .2;
+            }
+
+        }
+    }
+
     & .webDesign, 
     & .appDesign,
     & .graphicDesign {

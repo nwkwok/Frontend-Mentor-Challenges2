@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+
+.container {
+    height: 252px;
+    width: 1111px;
+    background-color: $primary-peach;
+    color: white;
+    margin-bottom: 200px;
+    display: flex;
+    position: relative;
+    border-radius: 15px;
+
+    &.web {
+        background-image: url('../../assets/web-design/desktop/bg-pattern-intro-web.svg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+    &.app {
+        background-image: url('../../assets/app-design/desktop/bg-pattern-intro-app.svg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    &.graphic{
+        background-image: url('../../assets/graphic-design/desktop/bg-pattern-intro-graphic.svg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+
+    & .contentContainer {
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        & h2 {
+            font-size: 48px;
+            letter-spacing: 1px;
+            margin-bottom: -10px;
+        }
+
+        & p {
+            font-size: 16px;
+            line-height: 1.5;
+            width: 400px;
+        }
+    }
+
+}

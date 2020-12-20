@@ -1,6 +1,8 @@
 import React from 'react';
 import style from './LetsTalk.module.scss';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom'
+
 
 function LetsTalk() {
   return (
@@ -15,9 +17,9 @@ function LetsTalk() {
         </p>
       </div>
       <div>
-        <Button 
+        <Link to='/contact'><Button 
             buttonContent='GET IN TOUCH' 
-            type='light' />
+            type='light' /></Link>
       </div>
     </div>
   );

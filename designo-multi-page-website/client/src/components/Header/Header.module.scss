@@ -30,6 +30,18 @@
                 margin-right: 25px;
 
             }
+
+            & a {
+                text-decoration: none;
+                color: $primary-black;
+                cursor: pointer;
+            
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            
         }
     }
 

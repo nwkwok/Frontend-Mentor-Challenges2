@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Hero.module.scss';
 import hero from '../../assets/home/desktop/image-hero-phone.png';
 import Button from '../Button/Button'
+import { Link } from 'react-router-dom'
 
 
 function Hero() {
@@ -13,9 +14,9 @@ function Hero() {
         </div>
         <p>With over 10 years in the industry, we are experienced in creating fully responsive website, app design, and engaging brand experiences. Find out more about our services.</p>
 
-        <Button
+        <Link to='/about-us'><Button
             buttonContent='LEARN MORE'
-            type='light' />
+            type='light' /></Link>
 
       </div>
       <div className={style.heroImageContainer}>

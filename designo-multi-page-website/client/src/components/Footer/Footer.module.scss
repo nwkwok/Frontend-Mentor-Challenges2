@@ -2,12 +2,11 @@
 
 .footerContainer {
     position: relative;
-    margin-top: -50px;
     bottom: 0;
     height: 370px;
     width: 100%;
     background-color: $secondary-darkGrey;
-    z-index: -100;
+    z-index: 0;
 
     & .footerContentTop {
         width: 1111px;
@@ -32,7 +31,16 @@
     
                 & li:not(:last-child) {
                     margin-right: 30px;
+                }
 
+                & a {
+                    text-decoration: none;
+                    color: $primary-white;
+            
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -70,9 +78,10 @@
             margin-left: auto;
             padding-bottom: 15px;
 
-            img:not(:last-child) {
+            & a:not(:last-child) {
                 margin-right: 10px;
             }
+
         }
 
 
