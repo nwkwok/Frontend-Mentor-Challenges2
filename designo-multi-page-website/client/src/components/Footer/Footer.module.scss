@@ -4,9 +4,78 @@
     position: relative;
     margin-top: -50px;
     bottom: 0;
-    height: 300px;
+    height: 370px;
     width: 100%;
     background-color: $secondary-darkGrey;
     z-index: -100;
+
+    & .footerContentTop {
+        width: 1111px;
+        margin: 0 auto;
+        padding-top: 105px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 50%;
+        }
+
+        & .navContainer {
+            & ul {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                color: white;
+                letter-spacing: 2px;
+                font-size: 14px;
+    
+                & li:not(:last-child) {
+                    margin-right: 30px;
+
+                }
+            }
+        }
+    }
+
+    & .line {
+        width: 1111px;
+        margin: 20px auto;
+        border-top: 1px solid $primary-white;
+        opacity: .25;
+    }
+
+    & .footerContentBottom {
+        width: 1111px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        text-align: left;
+        color: $primary-white;
+
+        & .address {
+            span {
+                font-weight: 500;
+            }
+
+        }
+        & .contact {
+            p {
+                font-weight: 500;
+                margin-left: 200px;
+            }
+        }
+        & .socialMedia {
+            margin-left: auto;
+            padding-bottom: 15px;
+
+            img:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+
+
+    }
 
 }
