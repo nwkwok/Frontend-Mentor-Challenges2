@@ -23,11 +23,12 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            letter-spacing: 2px;
+            font-size: 14px;
 
-            & li {
-                margin-right: 15px;
-                letter-spacing: 2px;
-                font-size: 14px;
+            & li:not(:last-child) {
+                margin-right: 25px;
+
             }
         }
     }
