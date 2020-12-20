@@ -1,12 +1,15 @@
 import React from 'react'
-import styles from './App.module.scss'
+import style from './App.module.scss'
 import Header from './components/Header/Header'
+import Hero from './components/Hero/Hero'
+
 
 function App() {
   return (
     <>
-      <div className={styles.container}>
+      <div className={style.container}>
         <Header />
+        <Hero /> 
       </div>
     </>
   );

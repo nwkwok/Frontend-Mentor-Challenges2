@@ -1,15 +1,15 @@
 import React from 'react';
 import logo from '../../assets/shared/desktop/logo-dark.png';
-import styles from './Header.module.scss';
+import style from './Header.module.scss';
 
 function Header() {
   return (
-    <div className={styles.headerContainer}>
-      <div className={styles.logoContainer}>
+    <div className={style.headerContainer}>
+      <div className={style.logoContainer}>
         <img src={logo} alt='logo' />
       </div>
-      <div className={styles.navContainer}>
-        <ul className={styles.navLinks}>
+      <div className={style.navContainer}>
+        <ul className={style.navLinks}>
           <li>OUR COMPANY</li>
           <li>LOCATION</li>
           <li>CONTACT</li>

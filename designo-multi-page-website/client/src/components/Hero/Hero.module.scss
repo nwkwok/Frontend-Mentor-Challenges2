@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+
+.heroContainer {
+    width: 100%;
+    height: 640px;
+    background-color: $secondary-peach;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 100px;
+    
+    & .heroContent { 
+        margin-left: 90px;
+        color: $primary-white;
+
+        h3 {
+        font-size: 48px;
+        font-weight: 500;
+        }
+
+        p {
+            
+        }
+
+    }
+
+
+
+    & .heroImageContainer{
+        
+        & .oval {
+            position: absolute;
+            width: 640px;
+            height: 640px;
+            top: 140px;
+            right: 145px;
+            background-color: $primary-black;
+            background: linear-gradient(90deg, rgba(93, 2, 2, 0.0001) 0%, rgba(93, 2, 2, 0.497569) 100%);
+            mix-blend-mode: normal;
+            opacity: 0.31;
+            border-radius: 50%;
+        }
+
+        img {
+            margin-top: 150px;
+        }
+
+
+    
+
+
+    }
+
+
+
+
+}
