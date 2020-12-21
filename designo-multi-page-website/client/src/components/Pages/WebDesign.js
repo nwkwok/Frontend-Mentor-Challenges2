@@ -2,10 +2,13 @@ import React from 'react'
 import PageHeader from '../PageHeader/PageHeader'
 import LetsTalk from '../../components/LetsTalk/LetsTalk'
 import DesignCard from '../../components/DesignCard/DesignCard'
+import ScrollToTop from '../Utility/ScrollToTop'
 
 function WebDesign() {
+
     return (
         <div>
+            <ScrollToTop />
             <PageHeader 
                 page='web'
                 heading='Web Design'
