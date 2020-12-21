@@ -14,7 +14,8 @@ function WebDesign() {
                 '/>
             <DesignCard 
                 name='Test Card'
-                description='This is a test description for the card I just made' 
+                description='This is a test description for the card I just made'
+                page='web' 
                 />
             <LetsTalk />
         </div>

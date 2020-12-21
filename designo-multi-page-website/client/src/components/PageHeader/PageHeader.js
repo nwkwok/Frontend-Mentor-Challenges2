@@ -1,8 +1,5 @@
 import React from 'react';
 import style from './PageHeader.module.scss';
-// import WebDesignBg from '../../assets/web-design/desktop/bg-pattern-intro-web.svg'
-// import AppDesignBg from '../../assets/app-design/desktop/bg-pattern-intro-app.svg'
-// import GraphicDesignBg from '../../assets/graphic-design/desktop/bg-pattern-intro-graphic.svg'
 
 function PageHeader(props) {
   const getImageSrc = () => {
