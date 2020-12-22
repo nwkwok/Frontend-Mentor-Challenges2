@@ -14,7 +14,7 @@ function Hero() {
         </div>
         <p>With over 10 years in the industry, we are experienced in creating fully responsive website, app design, and engaging brand experiences. Find out more about our services.</p>
 
-        <Link to='/about-us'><Button
+        <Link to='/our-company'><Button
             buttonContent='LEARN MORE'
             btn='light' /></Link>
 
