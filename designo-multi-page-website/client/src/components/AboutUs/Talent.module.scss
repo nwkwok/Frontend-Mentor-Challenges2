@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.container {
+    width: 1111px;
+    height: 640px;
+    display: flex;
+    margin-bottom: 50px;
+
+    & .contentImage img {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    & .contentContainer {
+        background-color: $design-card-bg;
+        padding: 90px 90px 0;
+        background-image: url('../../assets/shared/desktop/bg-pattern-two-circles.svg');
+        background-repeat: no-repeat;
+        background-position: -150px 100%;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+
+        & .header {
+            color: $primary-peach;
+            font-size: 40px;
+            line-height: 1.2;
+            font-weight: 500;
+        }
+
+        & .content {
+            color: $primary-black;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+
+}

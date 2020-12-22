@@ -5,7 +5,7 @@ function LightButton(props) {
 
     return (
         <div className={
-            `${style.buttonContainer} ${props.type === 'light' ? style.light : null}`
+            `${style.buttonContainer} ${props.type === 'light' ? style.light : style.dark}`
             }>
             {props.buttonContent}
         </div>

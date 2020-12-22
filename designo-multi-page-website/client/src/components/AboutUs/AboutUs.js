@@ -1,41 +1,24 @@
-import React from 'react';
-import style from './AboutUs.module.scss';
-import ImgPassion from '../../assets/home/desktop/illustration-passionate.svg';
-import ImgResourceful from '../../assets/home/desktop/illustration-resourceful.svg';
-import ImgFriendly from '../../assets/home/desktop/illustration-friendly.svg';
+import React from 'react'
+import style from './AboutUs.module.scss'
+import AboutUsHero from '../../assets/about/desktop/image-about-hero.jpg'
+
 
 function AboutUs() {
-  return (
-    <div className={style.container}>
-      <div className={style.passionate}>
-        <img src={ImgPassion} alt='passionate-img' />
-        <p className={style.heading}>Passionate</p>
-        <p className={style.description}>
-          Each project starts with an in-depth brand research to ensure we only
-          create products that serve a purpose. We merge art, design, and
-          technology into exciting new solutions.
-        </p>
-      </div>
-      <div className={style.resourceful}>
-        <img src={ImgResourceful} alt='resourceful-img' />
-        <p className={style.heading}>Resourceful</p>
-        <p className={style.description}>
-          Everything that we do has a strategic purpose. We use an agile
-          approach in all of our projects and value customer collaboration. It
-          guarantees superior results that fulfill our clients’ needs.
-        </p>
-      </div>
-      <div className={style.friendly}>
-        <img src={ImgFriendly} alt='friendly-img' />
-        <p className={style.heading}>Friendly</p>
-        <p className={style.description}>
-          We are a group of enthusiastic folks who know how to put people first.
-          Our success depends on our customers, and we strive to give them the
-          best experience a company can provide.
-        </p>
-      </div>
-    </div>
-  );
+    return (
+        <div className={style.container}>
+            <div className={style.contentContainer}>
+                <p className={style.header}>
+                About Us
+                </p>
+                <p className={style.content}>
+                Founded in 2010, we are a creative agency that produces lasting results for our clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make real impact. We’re always looking forward to creating brands, products, and digital experiences that connect with our clients’ audiences.
+                </p>
+            </div>
+            <div className={style.contentImage}>
+                <img src={AboutUsHero} alt ='about-us'/>
+            </div>
+        </div>
+    )
 }
 
-export default AboutUs;
+export default AboutUs

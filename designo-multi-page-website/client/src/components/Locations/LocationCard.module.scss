@@ -1,0 +1,50 @@
+@import '../../styles/variables.scss';
+
+    .container {
+        width: 1111px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+     
+        & .locationContainer {
+            background-color: $design-card-bg;
+            width: 715px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & .locationContent {
+                & .header {
+                    font-size: 40px;
+                    font-weight: 500;
+                    color: $primary-peach;
+                }
+
+                & .locationInfoContainer {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    & .locationOfficeInfo {
+                        letter-spacing: 1px;
+                        & span {
+                            font-weight: 600;
+                        }
+                    }
+
+                    & .locationContactInfo {
+                        margin-left: 125px;
+                        & span {
+                            font-weight: 600;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        & .locationMap img {
+            border-radius: 15px;
+        }
+
+    }
