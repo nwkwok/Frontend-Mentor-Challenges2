@@ -1,1 +1,113 @@
 @import '../../styles/variables.scss';
+
+@import '../../styles/variables.scss';
+
+.container {
+    width: 1111px;
+    height: 480px;
+    margin-bottom: 120px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    & .contentContainer {
+        width: 100%;
+        padding-left: 90px;
+        background-color: $primary-peach;
+        color: white;
+        border-radius: 15px;
+        background-image: url('../../assets/about/desktop/bg-pattern-hero-about-desktop.svg');
+        background-position: 0 -150px;
+        background-repeat: no-repeat;
+
+
+        & .header{
+            margin-top: 140px;
+            margin-bottom: -5px;
+            font-size: 48px;
+            font-weight: 500
+        }
+
+        & .content {
+            font-size: 16px;
+            line-height: 1.3;
+            width: 450px;
+        }
+    }
+
+    & .form {
+        position: absolute;
+        top: 10%;
+        right: 133px;
+
+           & input[type=text], textarea {
+            background-color: transparent;
+            width: 300px;
+            font-family: 'Jost', sans-serif;
+            color: $primary-white;
+            font-size: 15px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: block;
+            border: none;
+            border-bottom: 1px solid $primary-white;
+            resize: none;
+
+            &:focus {
+                outline: none;
+            }
+            &::placeholder{
+                color: white;
+            }
+
+        }
+
+        & button {
+            position: absolute;
+            right: 0;
+            bottom: -70px;
+            display: inline-block;
+            border: none;
+            border-radius: 5px;
+            width: 150px;
+            height: 50px;
+            padding: 5px;
+            margin: 0;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-decoration: none;
+            background: $primary-white;
+            color: $primary-black;
+            font-family: 'Jost', 'sans-serif';
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 150ms ease;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        
+         & button:hover,
+         & button:focus {
+            background: $secondary-peach;
+            color: $primary-white;
+        }
+        
+         & button:focus {
+            outline: 1px solid #fff;
+            outline-offset: -4px;
+        }
+        
+         & button:active {
+            transform: scale(0.99);
+        }
+
+    }
+
+}
+
+.successMessage { 
+    color: $primary-peach;
+    font-weight: 500;
+}
+

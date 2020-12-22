@@ -16,7 +16,7 @@ function Hero() {
 
         <Link to='/about-us'><Button
             buttonContent='LEARN MORE'
-            type='light' /></Link>
+            btn='light' /></Link>
 
       </div>
       <div className={style.heroImageContainer}>

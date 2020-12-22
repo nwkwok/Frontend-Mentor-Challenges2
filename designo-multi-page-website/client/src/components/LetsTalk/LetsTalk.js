@@ -19,7 +19,7 @@ function LetsTalk() {
       <div>
         <Link to='/contact'><Button 
             buttonContent='GET IN TOUCH' 
-            type='light' /></Link>
+            btn='light' /></Link>
       </div>
     </div>
   );

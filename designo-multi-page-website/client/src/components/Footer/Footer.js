@@ -18,7 +18,7 @@ function Footer() {
         <div className={style.navContainer}>
           <ul className={style.navLinks}>
             <li><Link to='/our-company'>OUR COMPANY</Link></li>
-            <li><Link to='/locations'>LOCATION</Link></li>
+            <li><Link to='/locations'>LOCATIONS</Link></li>
             <li><Link to='/contact'>CONTACT</Link></li>
           </ul>
         </div>
