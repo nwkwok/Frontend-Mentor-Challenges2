@@ -14,8 +14,21 @@ const style = {
     }
 }
 
-
 function AppDesign() {
+    // const [isDesktop, setDesktop] = useState(window.innerWidth > 1111)
+    // const [isTablet, setTablet] = useState(window.innerWidth > 770 && window.innerWidth <= 1111)
+    // const [isMobile, setMobile] = useState(window.innerWidth > 250 && window.innerWidth <= 770)
+
+    // const updateMedia = () => {
+        
+    // }
+
+    // useEffect (() => {
+    //     window.addEventListener('resize', updateMedia);
+    //     return () => window.removeEventListener('resize', updateMedia);
+    // });
+
+
     return (
         <div>
             <ScrollToTop />

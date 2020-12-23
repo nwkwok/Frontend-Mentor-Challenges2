@@ -63,3 +63,43 @@
     }
 
 }
+
+@media (min-width: 770px) and (max-width: 1111px) {
+
+    .container {
+        width: 690px;
+        margin: 0 auto;
+
+        & .cardContainer {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height:320px;
+            width: 100%;
+            margin-bottom: 30px;
+            margin-top: 0;
+
+            & img {
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+            }
+
+            & .content {
+                height: 320px;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+        
+                & .name {
+                    margin-bottom: -1px;
+                }
+            }
+        }
+
+    }
+
+}
