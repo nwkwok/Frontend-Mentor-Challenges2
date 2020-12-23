@@ -2,7 +2,7 @@
 
 .headerContainer {
     height: 100px;
-    width: 100%;
+    width: 1111px;
     margin: 20px 0;
     display: flex;
     justify-content: space-between;
@@ -40,9 +40,16 @@
                     text-decoration: underline;
                 }
             }
-
-            
         }
     }
+
+}
+
+@media (min-width: 770px) and (max-width: 1111px) {
+    .headerContainer {
+        width: 690px;
+
+    }
+
 
 }

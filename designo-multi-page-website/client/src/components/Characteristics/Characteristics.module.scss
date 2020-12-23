@@ -1,44 +1,68 @@
 @import '../../styles/variables.scss';
 
 .container {
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 50px;
+  text-align: center;
+  width: 1111px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px;
 
-    & .passionate{
-        & img {
-            background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
-            background-size: cover;
+  & .passionate {
+    & img {
+      background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
+      background-size: cover;
+    }
+  }
+
+  & .resourceful {
+    & img {
+      background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
+      background-size: cover;
+    }
+  }
+
+  & .friendly {
+    & img {
+      background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
+      background-size: cover;
+    }
+  }
+
+  & .heading {
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+
+  & .description {
+    width: 330px;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1111px) {
+  .container {
+    width: 690px;
+    flex-direction: column;
+    margin: 0 auto;
+    
+
+    & .passionate,
+    & .resourceful,
+    & .friendly {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+
+        & .heading,
+        & .description {
+            width: 450px;
         }
-    }
 
-    & .resourceful{
-        & img {
-            background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
-            background-size: cover;
-        }
 
-    }
 
-    & .friendly{
-        & img {
-            background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
-            background-size: cover;
-        }
-
-    }
-
-    & .heading {
-        font-size: 20px;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-    }   
-
-    & .description {
-        width: 330px;
-    }
-
+  }
+}
 }

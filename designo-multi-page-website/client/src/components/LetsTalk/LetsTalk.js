@@ -16,10 +16,12 @@ function LetsTalk() {
           our expertise can help your business grow.
         </p>
       </div>
-      <div>
+      <div className={style.button}>
+        
         <Link to='/contact'><Button 
             buttonContent='GET IN TOUCH' 
             btn='light' /></Link>
+          
       </div>
     </div>
   );

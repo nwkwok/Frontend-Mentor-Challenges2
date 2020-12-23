@@ -1,66 +1,94 @@
 @import '../../styles/variables.scss';
 
 .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 100px;
-    height: 640px;
+  width: 1111px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 75px;
+  height: 640px;
+  color: $primary-white;
+  letter-spacing: 1.5px;
+  text-align: center;
+
+  & a {
+    text-decoration: none;
     color: $primary-white;
-    letter-spacing: 1.5px;
-    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 15px;
 
-    & a {
-        text-decoration: none;
-        color: $primary-white;
-        cursor: pointer;
-        transition: all .5s;
+    &:hover {
+      background-color: $primary-peach;
 
-
-        &:hover{
-            background-color: $primary-peach;
-
-            & img {
-                opacity: .2;
-            }
-
-        }
+      & img {
+        opacity: 0.2;
+      }
     }
+  }
 
-    & .webDesign, 
+  & .webDesign,
+  & .appDesign,
+  & .graphicDesign {
+    position: relative;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  span {
+    color: $primary-peach;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+    transform: scaleX(0.45);
+  }
+
+  img {
+    border-radius: 15px;
+    opacity: 0.7;
+  }
+
+  .featureText {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1111px) {
+  .container {
+    width: 690px;
+
+    & .webDesign,
     & .appDesign,
     & .graphicDesign {
-        position: relative;
-
+      width: 690px;
+      height: 200px;
+      overflow: hidden;
     }
 
-    p {
-        font-size: 15px;
-        font-weight: 500;
+    & .webDesign {
+      & img {
+        content: url('../../assets/home/tablet/image-web-design.jpg');
+      }
     }
 
-    span {
-        color: $primary-peach;
-        display: inline-block;
-        font-weight: 600;
-        font-size: 16px;
-        transform: scaleX(.45);
+    & .appDesign {
+      & img {
+        content: url('../../assets/home/tablet/image-app-design.jpg');
+      }
     }
 
-    img {
-        border-radius: 15px;
-        opacity: .7;
-        
+    & .graphicDesign {
+      & img {
+        content: url('../../assets/home/tablet/image-graphic-design.jpg');
+      }
     }
-
-    .featureText {
-        width: 300px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-
+  }
 }

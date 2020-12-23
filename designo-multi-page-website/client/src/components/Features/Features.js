@@ -4,7 +4,6 @@ import AppDesign from '../../assets/home/desktop/image-app-design.jpg';
 import GraphicDesign from '../../assets/home/desktop/image-graphic-design.jpg';
 import LgWebDesign from '../../assets/home/desktop/image-web-design-large.jpg';
 import { Link } from 'react-router-dom'
-// import SmWebDesign from '../../assets/home/desktop/image-web-design-small.jpg';
 
 function Features() {
   return (

@@ -1,87 +1,105 @@
 @import '../../styles/variables.scss';
 
 .heroContainer {
-    width: 100%;
-    height: 640px;
-    background-color: $primary-peach;
-    border-radius: 15px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
-    margin-bottom: 100px;
+  width: 1111px;
+  height: 640px;
+  background-color: $primary-peach;
+  border-radius: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 100px;
+  background-image: url('../../assets/home/desktop/bg-pattern-hero-home.svg');
+  background-repeat: no-repeat;
+  background-position: right;
 
-    & a {
-        text-decoration: none;
-        color: $primary-black;
+  & a {
+    text-decoration: none;
+    color: $primary-black;
 
-        &:hover{
-            cursor: pointer;
-            
-        }
+    &:hover {
+      cursor: pointer;
     }
-    
-    & .heroContent { 
-        margin-left: 90px;
-        margin-top: -40px;
-        color: $primary-white;
+  }
 
-        & .h3Container {
-            width: 500px;
-        }
+  & .heroContent {
+    margin-left: 90px;
+    margin-top: -40px;
+    color: $primary-white;
 
-        h3 {
-        font-size: 48px;
-        font-weight: 500;
-        margin-bottom: 30px;
-        line-height: 1;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-
+    & .h3Container {
+      width: 500px;
     }
 
+    h3 {
+      font-size: 48px;
+      font-weight: 500;
+      margin-bottom: 30px;
+      line-height: 1;
+    }
 
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
 
-    & .heroImageContainer {
+  & .heroImageContainer {
+    position: relative;
+    height: 100%;
+    right: 100px;
 
-        position: relative;
-        height: 100%;
-        right: 100px;
+    img {
+      position: relative;
+      z-index: 10;
+      left: 80px;
+    }
+  }
+}
 
-        img {
+@media (min-width: 770px) and (max-width: 1111px) {
+    .heroContainer {
+        flex-direction: column;
+        width: 690px;
+        height: 845px;
+        text-align: center;
+        background-position: 200px 0;
+        margin-bottom: 70px;
+
+        & .heroContent {
+          margin: 20px auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          & .h3Container {
+            margin-bottom: -20px;
+          }
+
+          & p {
+            width: 470px;
+          }
+
+          & .button {
             position: relative;
-            z-index: 10;
-            left: 80px;
+            top: -50px;
+          }
 
-            
-        }
-        
-        & .oval {
-            position: absolute;
-            width: 640px;
-            height: 640px;        
-            top: 0;
-            background-color: $primary-black;
-            background: linear-gradient(90deg, rgba(93, 2, 2, 0.0001) 0%, rgba(93, 2, 2, 0.497569) 100%);
-            mix-blend-mode: normal;
-            opacity: 0.31;
-            border-radius: 50%;
-            z-index: 0
         }
 
+        & .heroImageContainer {
+            position: static;
 
+            & img {
+              position: static;
+              transform: translateY(-160px);
+            }
 
-
-    
+        }
 
 
     }
-
-
 
 
 }
