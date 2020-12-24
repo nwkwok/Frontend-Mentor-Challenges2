@@ -3,7 +3,7 @@
 .headerContainer {
     height: 100px;
     width: 1111px;
-    margin: 20px 0;
+    margin: 20px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,8 +48,12 @@
 @media (min-width: 770px) and (max-width: 1111px) {
     .headerContainer {
         width: 690px;
-        margin: 20px auto 0;
+        margin-bottom: 0;
     }
+}
 
-
+@media (min-width: 375px) and (max-width: 770px) {
+    .headerContainer {
+        width: 375px;
+    }
 }
