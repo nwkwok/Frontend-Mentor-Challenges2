@@ -15,7 +15,7 @@ function AboutUs() {
                 </p>
             </div>
             <div className={style.contentImage}>
-                <img src={AboutUsHero} alt ='about-us'/>
+                <img src={AboutUsHero} alt='about-us'/>
             </div>
         </div>
     )

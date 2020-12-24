@@ -1,50 +1,71 @@
 @import '../../styles/variables.scss';
 
-    .container {
-        width: 1111px;
+.container {
+  width: 1111px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  & .locationContainer {
+    background-color: $design-card-bg;
+    width: 715px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/shared/desktop/bg-pattern-two-circles.svg');
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+
+    & .locationContent {
+      & .header {
+        font-size: 40px;
+        font-weight: 500;
+        color: $primary-peach;
+      }
+
+      & .locationInfoContainer {
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
-     
-        & .locationContainer {
-            background-color: $design-card-bg;
-            width: 715px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        justify-content: flex-start;
 
-            & .locationContent {
-                & .header {
-                    font-size: 40px;
-                    font-weight: 500;
-                    color: $primary-peach;
-                }
-
-                & .locationInfoContainer {
-                    display: flex;
-                    justify-content: flex-start;
-
-                    & .locationOfficeInfo {
-                        letter-spacing: 1px;
-                        & span {
-                            font-weight: 600;
-                        }
-                    }
-
-                    & .locationContactInfo {
-                        margin-left: 125px;
-                        & span {
-                            font-weight: 600;
-                        }
-                    }
-
-                }
-            }
+        & .locationOfficeInfo {
+          letter-spacing: 1px;
+          & span {
+            font-weight: 600;
+          }
         }
 
-        & .locationMap img {
-            border-radius: 15px;
+        & .locationContactInfo {
+          margin-left: 125px;
+          & span {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  & .locationMap img {
+    border-radius: 15px;
+  }
+}
+@media (min-width: 770px) and (max-width: 1111px) {
+    .container {
+        width: 690px;
+        flex-direction: column !important;
+        margin: 0 auto 80px;
+
+        & .locationContainer {
+            order: 2;
+            width: 690px;
+            margin-top: 25px;
+            height: 300px;
+        }
+
+        & .locationMap {
+            order: 1;
+            
         }
 
     }
+}

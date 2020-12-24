@@ -1,39 +1,53 @@
 @import '../../styles/variables.scss';
 
-
 .container {
-    width: 1111px;
+  width: 1111px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 100px;
+  margin-top: 100px;
+
+  & .canada,
+  & .australia,
+  & .unitedKingdom {
     display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: $primary-black;
+    font-weight: 500;
 
-    & .canada, 
-    & .australia,
-    & .unitedKingdom {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: 20px;
-        letter-spacing: 5px;
-        color: $primary-black;
-        font-weight: 500;
-        
-
-        & img {
-            background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            object-fit: fill;
-        }
-
-        & a {
-            text-decoration: none;
-            margin: 0 auto;
-            }
-        }
-
+    & img {
+      background-image: url('../../assets/shared/desktop/bg-pattern-small-circle.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      object-fit: fill;
     }
 
+    & a {
+      text-decoration: none;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1111px) {
+  .container {
+    width: 690px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+
+    & .canada,
+    & .australia,
+    & .unitedKingdom {
+      & a {
+        margin-top: -50px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

@@ -13,21 +13,26 @@ function AllLocations() {
         <img src={Canada} alt='location' />
         <h4>CANADA</h4>
         <Link to='/locations'>
-          <Button buttonContent='SEE LOCATION' />
+          <Button 
+            buttonContent='SEE LOCATION'
+            size='small' />
         </Link>
       </div>
       <div className={style.australia}>
         <img src={Australia} alt='location' />
         <h4>AUSTRALIA</h4>
         <Link to='/locations'>
-          <Button buttonContent='SEE LOCATION' />
+          <Button 
+          buttonContent='SEE LOCATION' 
+          size='small' />
         </Link>
       </div>
       <div className={style.unitedKingdom}>
         <img src={UnitedKingdom} alt='location' />
         <h4>UNITED KINGDOM</h4>
         <Link to='/locations'>
-          <Button buttonContent='SEE LOCATION' />
+          <Button buttonContent='SEE LOCATION' 
+          size='small' />
         </Link>
       </div>
     </div>
