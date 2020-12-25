@@ -101,5 +101,12 @@
         }
 
     }
-
 }
+
+@media (min-width: 200px) and (max-width: 769px) {
+    .container {
+      width: 375px;
+    }
+  
+  
+  }

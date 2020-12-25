@@ -127,3 +127,44 @@
     }
   }
 }
+
+
+@media (min-width: 375px) and (max-width: 769px) {
+    .container {
+      width: 375px;
+      height: 800px;
+  
+      & .webDesign,
+      & .appDesign,
+      & .graphicDesign {
+        width: 327px;
+        height: 800px;
+        overflow: hidden;
+        border-radius: 15px;
+  
+        & .scrim {
+          width: 327px;
+        }
+      }
+  
+      & .webDesign {
+        margin-bottom: 25px;
+        & img {
+          content: url('../../assets/home/mobile/image-web-design.jpg');
+        }
+      }
+  
+      & .appDesign {
+        & img {
+          content: url('../../assets/home/mobile/image-app-design.jpg');
+        }
+      }
+  
+      & .graphicDesign {
+        & img {
+          content: url('../../assets/home/mobile/image-graphic-design.jpg');
+        }
+      }
+    }
+  }
+
