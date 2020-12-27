@@ -68,12 +68,10 @@ function GraphicDesign() {
       <PageHeader
         page='graphic'
         heading='Graphic Design'
-        description='We deliver eye-catching branding materials that are 
-                tailored to meet your business objectives.
-                '
+        description='We deliver eye-catching branding materials that are tailored to meet your business objectives.'
       />
       <DesignCard page='graphic' />
-      <div style={style.base}>
+      <div style={media}>
         <DesignFeatures
           link='/web-design'
           imageSrc={SmWebDesign}

@@ -59,3 +59,41 @@
         margin: 0 auto 100px;
     }
 }
+
+@media (max-width: 770px) {
+    .container {
+        width: 375px;
+        height: 320px;
+        border-radius: 0px;
+        margin: 0 auto;
+
+    &.web {
+        background-image: url('../../assets/shared/mobile/bg-pattern-design-pages-intro-mobile.svg');
+        background-size: 250%;
+        background-repeat: no-repeat;
+        background-position: -250px -30px;
+    }
+
+    &.app {
+        background-image: url('../../assets/shared/mobile/bg-pattern-design-pages-intro-mobile.svg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    &.graphic{
+        background-image: url('../../assets/shared/mobile/bg-pattern-design-pages-intro-mobile.svg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: right;
+     }
+     & .contentContainer {
+        top: 45%;
+        & p {
+            font-size: 16px;
+            line-height: 1.5;
+            width: 350px;
+        }
+    }
+    }
+    
+}

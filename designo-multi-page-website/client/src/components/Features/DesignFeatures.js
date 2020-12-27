@@ -3,11 +3,11 @@ import style from './DesignFeatures.module.scss';
 import { Link } from 'react-router-dom';
 
 function DesignFeatures(props) {
-
   return (
     <div className={style.container}>
-      <Link to={props.link}>
-        <div className={style.webDesign}>
+      <div className={style.webDesign}>
+        <div className={style.scrim}>
+        <Link to={props.link}>
           <img src={props.imageSrc} alt='feature' />
           <div className={style.featureText}>
             <h1>{props.header}</h1>
@@ -15,8 +15,9 @@ function DesignFeatures(props) {
               View Projects <span>{'>'}</span>
             </p>
           </div>
+        </Link>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }

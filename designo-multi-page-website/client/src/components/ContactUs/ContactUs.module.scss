@@ -1,6 +1,5 @@
 @import '../../styles/variables.scss';
 
-@import '../../styles/variables.scss';
 
 .container {
     width: 1111px;
@@ -106,10 +105,6 @@
 
 }
 
-.successMessage { 
-    color: $primary-peach;
-    font-weight: 500;
-}
 
 @media (min-width: 770px) and (max-width: 1111px) {
     .container {
@@ -132,9 +127,50 @@
         & .form {   
             margin-top: 120px;
             right: 90px;
+
             & input[type=text], textarea {
             width: 500px;
             }
         }
     }
 }
+
+@media (max-width: 770px) {
+    .container {
+        width: 375px;
+        height: 580px;
+        margin: 0 auto;
+        
+        & .contentContainer {
+            padding: 0;
+            text-align: center;
+
+            & .header {
+                margin-top: 20px;
+                
+            }
+                & .content {
+                margin: 15px auto;
+                width: 350px;
+            }
+        }
+
+        & .form {
+            width: 336px; 
+            right: 0;
+            top: 200px;
+
+
+            & input[type=text], textarea {
+                width:260px;
+            }
+
+            & button {
+                right: 105px;
+            }
+    
+        }
+    }
+}
+
+

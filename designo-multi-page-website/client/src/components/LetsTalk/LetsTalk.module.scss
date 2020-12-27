@@ -73,11 +73,12 @@
   .container {
     width: 330px;
     height: 380px;
-    margin: -175px auto 0;
+    margin: -110px auto 0;
     flex-direction: column;
     background-image: url('../../assets/shared/mobile/bg-pattern-design-pages-intro-mobile.svg');
-    background-size: cover;
-    top: 175px;
+    background-size: 400%;
+    background-position: 85%;
+    top: 70px;
 
     & .textContent {
       width: 100%;

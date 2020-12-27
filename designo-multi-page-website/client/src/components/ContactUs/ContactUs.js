@@ -3,36 +3,35 @@ import style from './ContactUs.module.scss';
 // import Button from '../Button/Button';
 
 function ContactUsForm() {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phone, setPhone] = useState('')
-    const [message, setMessage] = useState('')
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
-        console.log('Please insert a name')
-    } 
-    
+      console.log('Please insert a name');
+    }
+
     if (!email) {
-        console.log('Please enter an email')
-    }  
-    
+      console.log('Please enter an email');
+    }
+
     if (!phone) {
-        console.log('Please enter a phone number')
-    }  
-    
+      console.log('Please enter a phone number');
+    }
+
     if (!message) {
-        console.log('Please enter a message');
-    } 
-    
+      console.log('Please enter a message');
+    }
+
     if (name && email && phone && message) {
-        alert('Your information has been submitted successfully');
-    }   
-}
+      alert('Your information has been submitted successfully');
+    }
+  };
 
   return (
-
     <div className={style.container}>
       <div className={style.contentContainer}>
         <p className={style.header}>Contact Us</p>
@@ -78,16 +77,11 @@ function ContactUsForm() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
-          <button 
-            type="submit"
-            onClick={handleSubmit}>SUBMIT</button>
-          {/* <div className={style.buttonContainer}>
-            <Button 
-                btn='light' 
-                buttonContent='SUBMIT'
-                onSubmit={handleSubmit} 
-            />
-          </div> */}
+          <div className={style.btnContainer}>
+            <button type='submit' onClick={handleSubmit}>
+              SUBMIT
+            </button>
+          </div>
         </form>
       </div>
     </div>

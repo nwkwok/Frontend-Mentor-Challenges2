@@ -88,7 +88,7 @@
   }
 }
 
-@media (max-width: 1111px) {
+@media (min-width: 770px) and (max-width: 1111px) {
   .container {
     width: 690px;
     height: 660px;
@@ -132,7 +132,7 @@
 @media (max-width: 769px) {
     .container {
       width: 375px;
-    
+      margin-bottom: 250px;
       flex-wrap: nowrap;
 
       & .containerLeft {

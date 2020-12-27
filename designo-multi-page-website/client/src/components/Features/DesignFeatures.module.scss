@@ -9,52 +9,64 @@
   margin-bottom: 80px;
   
 
-  & a {
-    text-decoration: none;
-    color: $primary-white;
-    cursor: pointer;
-  }
-
-  & .webDesign,
-  & .appDesign,
-  & .graphicDesign {
+  & .webDesign {
     position: relative;
-    background-color: black;
-    border-radius: 15px;
-    transition: all .5s;
-    &:hover {
-      background-color: $primary-peach;
+    height: 300px;
+
+    & .scrim {
+      background-color: black;
+      transition: all 0.5s;
+      width: 541px;
+      height: 308px;
+      border-radius: 15px;
+
+      & .featureText {
+        width: 300px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    
+      p {
+        font-size: 15px;
+        font-weight: 500;
+      }
+    
+      span {
+        color: $primary-peach;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 16px;
+        transform: scaleX(0.45);
+      }
+    }
+
+      & img {
+        opacity: .7;
+      }
+
+      &:hover {
+        background-color: $primary-peach;
+      }
+    }
+
+    & a {
+      text-decoration: none;
+      color: $primary-white;
+      cursor: pointer;
     }
   }
 
-  p {
-    font-size: 15px;
-    font-weight: 500;
-  }
-
-  span {
-    color: $primary-peach;
-    display: inline-block;
-    font-weight: 600;
-    font-size: 16px;
-    transform: scaleX(0.45);
-  }
 
   img {
     border-radius: 15px;
     
   }
 
-  .featureText {
-    width: 300px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+
 }
 
-@media (max-width: 1111px) {
+@media (min-width: 770px) and (max-width: 1111px) {
   .container {
     width: 690px;
     margin: 0 auto 20px;
@@ -64,13 +76,49 @@
       width: 690px;
       height: 200px;
       overflow: hidden;
+      border-radius: 15px;
+
+      & .scrim {
+        width: 690px;
+
+      }
     
       & img {
         width: 690px;
         height: 200px;
         object-fit: fill;
-        
       }
     }
   }
+}
+
+@media (max-width: 770px) {
+  .container {
+    width: 375px;
+    margin: 0 auto 40px;
+    
+    &:last-child {
+      margin-bottom: 80px;
+    }
+    
+    & .webDesign {
+      width: 375px;
+      overflow: hidden;
+      border-radius: 15px;
+
+
+
+    & .scrim {
+      width: 375px;
+      height: 525px;
+
+      & .featureText {
+        width: 375px;
+      }
+
+    }
+
+  }
+}
+
 }

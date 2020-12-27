@@ -69,3 +69,54 @@
 
     }
 }
+
+@media (max-width: 770px) {
+    .container {
+      width: 375px;
+      flex-direction: column !important;
+      margin: 0 auto 30px;
+
+      & .locationContainer{
+        order: 2;
+        border-radius: 0;
+        width: 375px;
+        height: 325px;
+        text-align: center;
+        flex-direction: column;
+        margin-top: -6px;
+        background-position: -50%;
+        
+
+
+        & .locationContent {
+          display: flex;
+          flex-direction: column;
+
+          & .header {
+            margin-bottom: 20px;
+          }
+
+          & .locationInfoContainer {
+            flex-direction: column;
+
+            & .locationContactInfo {
+              margin-top: 20px;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+
+      & .locationMap {
+        order: 1;
+        width: 375px;
+        overflow: hidden;
+      
+        & img {
+          width: 375px;
+          border-radius: 0px;
+        
+        }
+      }
+    }
+}

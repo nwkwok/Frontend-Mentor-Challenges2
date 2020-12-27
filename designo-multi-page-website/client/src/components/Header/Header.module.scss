@@ -28,7 +28,6 @@
 
             & li:not(:last-child) {
                 margin-right: 25px;
-
             }
 
             & a {
@@ -55,6 +54,7 @@
 @media (max-width: 770px) {
     .headerContainer {
         width: 375px;
+        
 
     & .mobileNavIcon {
         transition: all .5s;
@@ -69,6 +69,8 @@
         left: 50%;
         top: 100px;
         transform: translateX(-50%);
+        z-index: 10000;
+
         & ul {
             display: flex;
             flex-direction: column;

@@ -103,9 +103,15 @@
     }
 }
 
-@media (min-width: 200px) and (max-width: 769px) {
+@media (max-width: 770px) {
     .container {
       width: 375px;
+      margin: 70px auto 40px;
+
+      & .cardContainer img,
+      & .cardContainer .content {
+          border-radius: 0;
+        }
     }
   
   

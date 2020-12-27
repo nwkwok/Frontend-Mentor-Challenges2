@@ -7,26 +7,21 @@ import close from '../../assets/shared/mobile/icon-close.svg';
 
 function Header() {
   const [isMobile, setMobile] = useState(window.innerWidth < 770);
-  // const [navBar, setNavBar] = useState(true)
   const [isOpen, setIsOpen] = useState(false);
 
   const updateMedia = () => {
     if (window.innerWidth < 770) {
       setMobile(true);
-      // setNavBar(true)
     } else if (window.innerWidth >= 770) {
       setMobile(false);
-      // setNavBar(false)
     }
   };
-
+  
   useEffect(() => {
     updateMedia();
     window.addEventListener('resize', updateMedia);
     return () => window.removeEventListener('resize', updateMedia);
   });
-
-  console.log(isMobile);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -77,13 +72,6 @@ function Header() {
         </Link>
       </div>
       {navMenu}
-      {/* <div className={style.navContainer}>
-        <ul className={style.navLinks}>
-          <li><Link to='/our-company'>OUR COMPANY</Link></li>
-          <li><Link to='/locations'>LOCATIONS</Link></li>
-          <li><Link to='contact'>CONTACT</Link></li>          
-        </ul>
-      </div> */}
     </div>
   );
 }
