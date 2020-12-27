@@ -9,6 +9,11 @@
     .container {
         width: 770px;
     }
+}
 
-
+@media (max-width: 770px) {
+    .container {
+        width: 100%;
+        min-width: 375px;
+    }
 }

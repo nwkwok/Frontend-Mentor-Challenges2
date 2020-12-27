@@ -4,6 +4,10 @@ import style from './Header.module.scss';
 import { Link } from 'react-router-dom'
 
 function Header() {
+  // const [mobile, setMobile] = useState(window.innerWidth < 400);
+  // console.log(mobile);
+  
+
   return (
     <div className={style.headerContainer}>
       <div className={style.logoContainer}>

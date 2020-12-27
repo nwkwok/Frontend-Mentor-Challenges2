@@ -88,7 +88,7 @@
   }
 }
 
-@media (min-width: 770px) and (max-width: 1111px) {
+@media (max-width: 1111px) {
   .container {
     width: 690px;
     height: 660px;
@@ -129,21 +129,30 @@
 }
 
 
-@media (min-width: 375px) and (max-width: 769px) {
+@media (max-width: 769px) {
     .container {
       width: 375px;
-      height: 800px;
+    
+      flex-wrap: nowrap;
+
+      & .containerLeft {
+        margin: 0 auto;
+      }
+
+      & .containerRight {
+        margin: 0 auto;
+      }
   
       & .webDesign,
       & .appDesign,
       & .graphicDesign {
         width: 327px;
-        height: 800px;
         overflow: hidden;
         border-radius: 15px;
   
         & .scrim {
           width: 327px;
+          height: 250px;
         }
       }
   
