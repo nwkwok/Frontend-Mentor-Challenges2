@@ -48,7 +48,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-position: right;
             width: 690px;
             padding: 0;
             border-top-left-radius: 0px;
@@ -76,6 +75,52 @@
                 border-bottom-right-radius: 0px;
                 
 
+            }
+        }
+    }
+}
+
+
+@media (max-width: 770px) {
+    .container { 
+        width: 375px;
+        height: 715px;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        
+
+        & .contentContainer {
+            order: 2;
+            width: 375px;
+            height: 540px;
+            text-align: center;
+            padding: 0;
+            border-radius: 0;
+            background-image: url('../../assets/about/mobile/bg-pattern-hero-about-mobile.svg');
+
+
+            & .header {
+                margin: 50px auto 0;
+            }
+
+            & .content {
+                width: 350px;
+                margin: 10px auto 0;
+                padding-bottom: 30px
+            }
+        }
+
+        & .contentImage {
+            order: 1;
+            width: 375px;
+            height: 325px; 
+            margin-bottom: -10px;
+
+            & img {
+                width: 375px;
+                content: url('../../assets/about/mobile/image-world-class-talent.jpg');
+                border-radius: 0;
             }
         }
     }

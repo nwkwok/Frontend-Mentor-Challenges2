@@ -80,3 +80,49 @@
         }
     }
 }
+
+@media (max-width: 770px) {
+    .container { 
+        width: 375px;
+        height: 715px;
+        margin: 0 auto 125px;
+        flex-direction: column;
+        justify-content: flex-start;
+        
+
+        & .contentContainer {
+            order: 2;
+            width: 375px;
+            height: 540px;
+            text-align: center;
+            padding: 0;
+            border-radius: 0;
+            background-position: left top;
+
+
+
+            & .header {
+                margin: 50px auto 0;
+            }
+
+            & .content {
+                width: 350px;
+                margin: 10px auto 0;
+                padding-bottom: 30px
+            }
+        }
+
+        & .contentImage {
+            order: 1;
+            width: 375px;
+            height: 325px; 
+            margin-bottom: -10px;
+
+            & img {
+                width: 375px;
+                content: url('../../assets/about/mobile/image-real-deal.jpg');
+                border-radius: 0;
+            }
+        }
+    }
+}

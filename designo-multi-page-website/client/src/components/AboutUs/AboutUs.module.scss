@@ -88,3 +88,45 @@
         }
     }
 }
+
+@media (max-width: 770px) {
+    .container { 
+        width: 375px;
+        height: 715px;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        
+
+        & .contentContainer {
+            order: 2;
+            width: 375px;
+            height: 340px;
+            text-align: center;
+            padding: 0;
+            border-radius: 0;
+            background-position: 80px -200px;
+
+            & .header {
+                margin: 50px auto 0;
+            }
+
+            & .content {
+                width: 350px;
+                margin: 10px auto 0;
+            }
+        }
+
+        & .contentImage {
+            order: 1;
+            width: 375px;
+            height: 325px; 
+
+            & img {
+                width: 375px;
+                content: url('../../assets/about/mobile/image-about-hero.jpg');
+                border-radius: 0;
+            }
+        }
+    }
+}
