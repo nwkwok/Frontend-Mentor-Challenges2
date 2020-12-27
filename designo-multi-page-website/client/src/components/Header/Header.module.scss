@@ -55,5 +55,43 @@
 @media (max-width: 770px) {
     .headerContainer {
         width: 375px;
+
+    & .mobileNavIcon {
+        transition: all .5s;
+        cursor: pointer;
+    }
+
+    & .mobileNavContainer{
+        height: 300px;
+        width: 375px;
+        background-color: $secondary-darkGrey;
+        position: absolute;
+        left: 50%;
+        top: 100px;
+        transform: translateX(-50%);
+        & ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            letter-spacing: 2px;
+            font-size: 30px;
+            
+            & li {
+                margin-bottom: 30px;
+            }
+
+            & a {
+                text-decoration: none;
+                color: $primary-white;
+                cursor: pointer;
+            
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+
     }
 }
