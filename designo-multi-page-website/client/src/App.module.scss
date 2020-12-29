@@ -5,6 +5,19 @@
     margin: 0 auto;
 }
 
+.ovalLeft {
+    position: absolute;
+    left: 0;
+    top: 500px;
+    z-index: -100;
+}
+.ovalRight {
+    position: absolute;
+    right: 0;
+    top: 1700px;
+    transform: scaleX(-1);
+    z-index: -100;
+}
 @media (min-width: 770px) and (max-width: 1111px) {
     .container {
         width: 770px;

@@ -9,7 +9,7 @@ import Contact from './components/Pages/Contact'
 import GraphicDesign from './components/Pages/GraphicDesign'
 import Locations from './components/Pages/Locations'
 import WebDesign from './components/Pages/WebDesign'
-
+import Leaf from './assets/shared/desktop/bg-pattern-leaf.svg'
 import { Switch, Route } from 'react-router-dom'
 
 
@@ -18,6 +18,9 @@ function App() {
     <>
       <div className={style.container}>
         <Header />
+        <img src={Leaf} className={style.ovalLeft} alt='background'></img>
+        <img src={Leaf} className={style.ovalRight} alt='background'></img>
+
       <Switch>
         <Route path='/web-design' component={WebDesign} />
         <Route path='/app-design' component={AppDesign} />
