@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.ovalLeftContainer {
+    height: 500px;
+    width: 1000px;
+    background-image: url('../../assets/shared/desktop/bg-pattern-leaf.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 600px;
+    left: 0;
+    z-index: -1000;
+}
+
+.ovalRightContainer {
+    height: 500px;
+    width: 1000px;
+    transform: scaleX(-1);
+    background-image: url('../../assets/shared/desktop/bg-pattern-leaf.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    bottom: -1450px;
+    z-index:-1000;
+}
+
+@media (min-width: 770px) and (max-width: 1111px) {
+    .ovalLeftContainer {
+        background-image: none;
+        display: none;
+    }
+
+    .ovalRightContainer {
+        background-image: none;
+        display: none;
+    }
+}
+
+
+@media (max-width: 770px) {
+    .ovalLeftContainer {
+        background-image: none;
+        display: none;
+    }
+
+    .ovalRightContainer {
+        background-image: none;
+        display: none;
+    }
+}
