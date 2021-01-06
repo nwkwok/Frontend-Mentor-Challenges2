@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import DarkLogo from '../../assets/shared/desktop/logo-dark.png';
 import style from './Header.module.scss';
 import { Link } from 'react-router-dom';
@@ -22,6 +22,7 @@ function Header() {
     window.addEventListener('resize', updateMedia);
     return () => window.removeEventListener('resize', updateMedia);
   });
+
 
   const handleClick = () => {
     setIsOpen(!isOpen);
